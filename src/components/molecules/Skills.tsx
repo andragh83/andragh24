@@ -2,7 +2,7 @@
 import Card from '../atoms/Card'
 
 export default function Skills(){
-    return <ul role="list" className="grid grid-cols-1 gap-3 p-6 overflow-y-auto rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818]">
+    return <ul role="list" className="grid grid-cols-1 gap-3 p-6 rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818]">
     <Card
         title="Documentation"
         body="Learn how Astro works and explore the official API docs."
