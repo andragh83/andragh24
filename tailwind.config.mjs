@@ -9,6 +9,9 @@ export default {
 				'sans': ['Urbanist', ...defaultTheme.fontFamily.sans],
 				'serif': ['Amiri',  ...defaultTheme.fontFamily.serif],
 			},
+			 colors: {
+        		'off-black': '#343434',
+      },
 		},
 	},
 	plugins: [],
