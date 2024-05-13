@@ -1,5 +1,5 @@
 
-import styles from './styles.module.css'
+import styles from '../card/styles.module.css'
 interface Props {
     title: string
     body: string
@@ -21,4 +21,3 @@ return (
 }
 
 export default Card
-

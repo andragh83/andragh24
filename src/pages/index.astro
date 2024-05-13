@@ -1,5 +1,4 @@
 ---
-
 import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
 import ContentManager from '@components/organisms/ContentManager'
@@ -8,9 +7,10 @@ import ContentManager from '@components/organisms/ContentManager'
 <Layout title="Welcome, I'm Andra!">
     <main class="flex gap-8 h-dvh w-full max-w-[2000px]">
         <div class="w-[60%]">
-            <HeroImage/></div>
+            <HeroImage client:load />
+        </div>
         <div class="w-[40%] overflow-y-auto">
-            <ContentManager />
+            <ContentManager client:load />
         </div>
     </main>
 </Layout>

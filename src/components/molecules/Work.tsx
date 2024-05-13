@@ -1,10 +1,10 @@
 
-import Card from '../atoms/Card'
+import Card from '../atoms/card/Card'
 
 export default function Work(){
-    return <ul role="list" className="grid grid-cols-1 gap-3 p-6 rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818]">
+    return <ul role="list" className="grid grid-cols-1 gap-3 w-full">
     <Card
-        title="Documentation"
+        title="Work"
         body="Learn how Astro works and explore the official API docs."
     />
     <Card
