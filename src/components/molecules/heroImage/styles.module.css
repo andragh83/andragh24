@@ -1,22 +1,22 @@
- .heroImageWrapper {
-     position: relative;
-     width: 100%;
-     height: 100%;
-     display: flex;
-     align-items: flex-end;
-     font-family: 'Urbanist', sans-serif;
-     font-weight: 700;
- }
+.heroImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+}
 
- .btnTxt {
-     font-family: 'Urbanist', sans-serif;
-     font-weight: 400;
- }
+.btnTxt {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+}
 
- .flipHorizontally {
-     transform: scaleX(-1);
- }
+.flipHorizontally {
+    transform: scaleX(-1);
+}
 
- .linearGradient {
-     background: linear-gradient(rgba(146, 152, 229, 0), #181818);
- }
+.linearGradient {
+    background: linear-gradient(rgba(146, 152, 229, 0), #181818);
+}
