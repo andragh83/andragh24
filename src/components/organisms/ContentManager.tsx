@@ -15,15 +15,17 @@ const ContentManager = (props: Props) => {
             className="relative p-6 flex flex-col gap-8 rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818]"
         >
             <div className="h-[48px]" />
-            <div className="fixed w-[33%] z-10 h-[48px] bg-[#2727277f]">
-                <Switch
-                    activeTab={activeTab}
-                    onClick={() => {
-                        activeTab === 'skills'
-                            ? setActiveTab('work')
-                            : setActiveTab('skills')
-                    }}
-                />
+            <div className={`fixed w-[33%] z-10 ${styles.switchWrapper}`}>
+                <div className={`${styles.switchSubWrapper}`}>
+                    <Switch
+                        activeTab={activeTab}
+                        onClick={() => {
+                            activeTab === 'skills'
+                                ? setActiveTab('work')
+                                : setActiveTab('skills')
+                        }}
+                    />
+                </div>
             </div>
             <div
                 className={`${styles.wrapper} flex overflow-x-hidden gap-6`}
@@ -31,15 +33,15 @@ const ContentManager = (props: Props) => {
                     transition: 'all 200ms',
                     transform:
                         activeTab === 'skills'
-                            ? 'translateX(calc(-50% - 12px))'
-                            : 'translateX(0px)',
+                            ? 'translateX(0px)'
+                            : 'translateX(calc(-50% - 12px))',
                 }}
             >
                 <div className="flex-1">
-                    <Work />
+                    <Skills />
                 </div>
                 <div className="flex-1">
-                    <Skills />
+                    <Work />
                 </div>
             </div>
         </div>

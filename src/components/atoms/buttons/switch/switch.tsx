@@ -7,7 +7,7 @@ interface Props {
 const Switch = ({ activeTab, onClick }: Props) => {
     return (
         <button
-            className="relative w-full rounded-full border-0 bg-[#333333] px-[8px] py-[6px] flex items-center h-[64px]"
+            className={`${styles.insetShadow} relative w-full rounded-full border-0 bg-[#333333] px-[8px] py-[6px] flex items-center h-[64px]`}
             onClick={onClick}
         >
             <div

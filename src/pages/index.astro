@@ -9,7 +9,7 @@ import ContentManager from '@components/organisms/ContentManager'
         <div class="w-[60%]">
             <HeroImage client:load />
         </div>
-        <div class="w-[40%] overflow-y-auto">
+        <div class="w-[40%] overflow-x-hidden overflow-y-auto scrollbar-style">
             <ContentManager client:load />
         </div>
     </main>
@@ -19,5 +19,15 @@ import ContentManager from '@components/organisms/ContentManager'
     main {
         padding: 40px;
         margin: auto;
+    }
+    .scrollbar-style {
+    }
+    .scrollbar-style::-webkit-scrollbar-thumb {
+        background: #343434;
+        border-radius: 10px;
+    }
+    .scrollbar-style::-webkit-scrollbar {
+        width: 4px;
+        background-color: #000; /* or add it to the track */
     }
 </style>
