@@ -63,7 +63,7 @@ export const data: { [key: string]: ICard } = {
     },
     skills_card_supabase: {
         type: 'icon_and_text',
-        style: 'full-color',
+        style: 'outlined',
         text: 'supabase',
     },
     skills_card_emails: {
@@ -75,7 +75,7 @@ export const data: { [key: string]: ICard } = {
     },
     skills_card_email_templates: {
         type: 'icon_and_text',
-        style: 'full-color',
+        style: 'outlined',
         text: 'email templates',
     },
     skills_card_design: {
@@ -87,7 +87,7 @@ export const data: { [key: string]: ICard } = {
     },
     skills_card_figma: {
         type: 'icon_and_text',
-        style: 'full-color',
+        style: 'outlined',
         text: 'figma',
     },
     work_card_general: {

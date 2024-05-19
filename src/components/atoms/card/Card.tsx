@@ -18,18 +18,21 @@ const Card = ({ card }: Props) => {
                 ${
                     card.style === 'outlined'
                         ? '!bg-transparent border-[1px] rounded-lg border-[#616161]'
-                        : card.type === 'icon_and_text'
-                          ? 'items-center'
-                          : card.type === 'icon'
-                            ? 'items-center justify-center'
-                            : ''
+                        : card.type === 'icon'
+                          ? 'items-center justify-center'
+                          : ''
                 }`}
         >
             {card.type === 'icon_and_text' ? (
-                <CardIcon icon={card.text as ICardIcon} />
+                <div className="flex item-center gap-4 p-4 rounded-lg bg-[#3c3c3c] w-full text-[22px]">
+                    <CardIcon icon={card.text as ICardIcon} />
+                    <p className="uppercase font-sans m-0 p-0 leading-0 self-center">
+                        {card.text}
+                    </p>
+                </div>
             ) : null}
             {hasLeftSide && card.type !== 'icon_and_text' ? (
-                <div className="border-[1px] border-white w-[120px] min-w-[120px] px-[12px] flex justify-end items-end  tracking-tight">
+                <div className="border-[1px] border-white h-full w-[120px] min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
                     <p className="text-[80px] text-white  p-0 m-0 leading-[80px] uppercase">
                         {card.icon_letter_1 ?? null}
                     </p>
@@ -40,14 +43,10 @@ const Card = ({ card }: Props) => {
                     </p>
                 </div>
             ) : null}
-            {card.text ? (
+            {card.text && card.type !== 'icon_and_text' ? (
                 <div className="flex flex-col gap-4">
                     {card.text ? (
-                        <p
-                            className={`${styles.cardText} ${card.type === 'icon_and_text' ? 'uppercase !font-sans' : ''}`}
-                        >
-                            {card.text}
-                        </p>
+                        <p className={`${styles.cardText}`}>{card.text}</p>
                     ) : null}
                     {card.text_2 ? (
                         <p className={styles.cardText}>{card.text_2}</p>
@@ -69,7 +68,7 @@ const Card = ({ card }: Props) => {
                         <div className="flex flex-wrap gap-4 p-4 rounded-lg bg-[#3c3c3c]">
                             {list.map((item) => (
                                 <div
-                                    className={`flex items-center gap-4  ${item === 'typescript' ? '' : 'border-white border-[1px] px-4 '}  rounded-lg py-2`}
+                                    className={`flex items-center gap-4  ${item === 'typescript' ? 'py-0' : 'border-white border-[1px] px-4'}  rounded-lg py-2`}
                                 >
                                     <div
                                         className={
