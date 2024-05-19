@@ -14,7 +14,7 @@
 .switchSubWrapper {
     padding-left: 24px;
     padding-right: 24px;
-    padding-bottom: 16px;
+    padding-bottom: 32px;
     padding-top: 16px;
-    background: linear-gradient(#1f1f1f, #1f1f1f, #1f1f1f, #1f1f1f30);
+    background: linear-gradient(#1f1f1f, #1f1f1f, #1f1f1f, #1f1f1f00);
 }

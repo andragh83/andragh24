@@ -1,4 +1,6 @@
+import SkillsIcon from '@components/atoms/icons/skills'
 import styles from './styles.module.css'
+import WorkIcon from '@components/atoms/icons/work'
 interface Props {
     onClick: () => void
     activeTab: 'skills' | 'work'
@@ -20,15 +22,12 @@ const Switch = ({ activeTab, onClick }: Props) => {
                             : 'translateX(calc(100%))',
                 }}
             />
-            <div
-                onClick={() => {
-                    console.log('click left')
-                }}
-                className={`${styles.btnTxt}`}
-            >
-                Skills
+            <div className={`${styles.btnTxt}`}>
+                <SkillsIcon size={15} color="#afafaf" /> Skills
             </div>
-            <div className={`${styles.btnTxt}`}>Work</div>
+            <div className={`${styles.btnTxt}`}>
+                <WorkIcon size={16} color="#afafaf" /> Work
+            </div>
         </button>
     )
 }
