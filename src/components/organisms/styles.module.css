@@ -4,6 +4,7 @@
 
 .switchWrapper {
     width: 40%;
+    max-width: 800px;
     top: 40px;
     margin-left: -24px;
     padding-right: 48px;
