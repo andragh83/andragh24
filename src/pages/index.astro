@@ -6,8 +6,8 @@ import ContentManager from '@components/organisms/ContentManager'
 
 <Layout title="Welcome, I'm Andra!">
     <main class="flex gap-8 h-dvh w-full max-w-[2000px]">
-        <div class="w-[60%]">
-            <HeroImage client:load />
+        <div class="w-[60%] relative">
+            <HeroImage client:only />
         </div>
         <div class="w-[40%] overflow-x-hidden overflow-y-auto scrollbar-style">
             <ContentManager client:load />

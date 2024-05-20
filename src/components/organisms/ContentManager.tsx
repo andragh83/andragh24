@@ -15,7 +15,7 @@ const ContentManager = (props: Props) => {
             className="relative p-6 flex flex-col gap-8 rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818]"
         >
             <div className="h-[48px]" />
-            <div className={`fixed w-[33%] z-10 ${styles.switchWrapper}`}>
+            <div className={`fixed w-[33%] z-4 ${styles.switchWrapper}`}>
                 <div className={`${styles.switchSubWrapper}`}>
                     <Switch
                         activeTab={activeTab}

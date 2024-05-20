@@ -19,7 +19,7 @@
     padding: calc(1.5rem - 1px);
     border-radius: 8px;
     color: white;
-    background-color: #3c3c3c;
+    background-color: var(--card-bg);
     opacity: 0.8;
     cursor: default;
     display: flex;
