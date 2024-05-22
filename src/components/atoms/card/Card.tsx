@@ -78,7 +78,7 @@ const Card = ({ card }: Props) => {
                             <div className="flex flex-col gap-2">
                                 {card.text_list.map((text, i) => (
                                     <div
-                                        className="px-4 py-3 rounded-lg bg-[#272727] text-[18px]"
+                                        className="px-4 py-3 rounded-lg bg-[#3a3a3a] text-[18px]"
                                         key={`text_list_item_${i}`}
                                     >
                                         {text}

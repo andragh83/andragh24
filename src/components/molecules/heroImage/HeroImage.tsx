@@ -3,7 +3,11 @@ import heroImage from '../../../assets/eu_cropped.jpg'
 import styles from '../heroImage/styles.module.css'
 import CrossIcon from '@components/atoms/icons/cross'
 import useWindowDimensions from '@components/hooks/useWindowDimensions'
-import { story } from '@components/data'
+import { socials, story } from '@components/data'
+import InstaIcon from '@components/atoms/icons/insta'
+import XIcon from '@components/atoms/icons/x'
+import LinkedinIcon from '@components/atoms/icons/linkedin'
+import GithubIcon from '@components/atoms/icons/github'
 
 export default function HeroImage() {
     const [scaleImg, setScaleImg] = useState<undefined | 'story' | 'contact'>(
@@ -65,7 +69,7 @@ export default function HeroImage() {
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
                 style={{
                     background:
-                        'linear-gradient(#18181800, #18181800, #1818186d, #181818)',
+                        'linear-gradient(#18181847, #1818186d, #181818c0, #181818)',
                     transition: 'all 300ms',
                     opacity: scaleImg ? 0 : 1,
                 }}
@@ -91,12 +95,25 @@ export default function HeroImage() {
                     </button>
                 ) : null}
                 <h1
-                    className="text-[80px] text-white w-full max-w-[1400px] leading-[96px]"
+                    className="text-[80px] text-white leading-[96px] tracking-wide"
                     style={{
                         position: 'absolute',
-                        bottom: scaleImg ? 800 : 180,
-                        left: 64,
+                        bottom:
+                            scaleImg === 'story'
+                                ? windowDimensions &&
+                                  windowDimensions?.height - 240
+                                : scaleImg === 'contact'
+                                  ? windowDimensions &&
+                                    windowDimensions?.height / 2 - 80
+                                  : 180,
+                        transform:
+                            scaleImg === 'contact'
+                                ? `translateX(-50%)`
+                                : undefined,
+                        left: scaleImg === 'contact' ? '50%' : 64,
                         transition: 'all 300ms',
+                        textAlign:
+                            scaleImg === 'contact' ? 'center' : undefined,
                     }}
                 >
                     ANDRA <br /> GHITULESCU
@@ -104,24 +121,57 @@ export default function HeroImage() {
                 <div
                     style={{
                         position: 'absolute',
-                        bottom: 300,
-                        left: 64,
-                        opacity:
-                            scaleImg === 'story' && showScaleImgCnt ? 1 : 0,
-                        height: scaleImg === 'story' ? 'auto' : 0,
+                        bottom:
+                            scaleImg === 'story'
+                                ? windowDimensions &&
+                                  windowDimensions.height - 700
+                                : scaleImg === 'contact'
+                                  ? windowDimensions &&
+                                    windowDimensions.height / 2 - 240
+                                  : undefined,
+                        transform:
+                            scaleImg === 'contact'
+                                ? `translateX(-50%)`
+                                : undefined,
+                        left: scaleImg === 'contact' ? '50%' : 64,
+                        opacity: scaleImg && showScaleImgCnt ? 1 : 0,
+                        height: scaleImg ? 'auto' : 0,
                         transition: 'all 300ms',
                     }}
                 >
-                    <div className="w-full h-full flex flex-col gap-8 pb-[80px]">
-                        {story.map((p, i) => (
-                            <p
-                                key={`story_${i}`}
-                                className="text-white text-[24px] font-serif font-thin max-w-[1400px]"
-                            >
-                                {p}
+                    {scaleImg === 'contact' ? (
+                        <div className="w-full flex flex-col gap-8 items-center justify-center">
+                            <p className="text-white uppercase text-[24px]">
+                                find me on
                             </p>
-                        ))}
-                    </div>
+                            <div className="w-full flex gap-4 items-center justify-center">
+                                {socials.map((item, i) => {
+                                    switch (item.id) {
+                                        case 'insta':
+                                            return <InstaIcon />
+                                        case 'x':
+                                            return <XIcon />
+                                        case 'linkedin':
+                                            return <LinkedinIcon />
+                                        case 'github':
+                                            return <GithubIcon />
+                                    }
+                                })}
+                            </div>
+                        </div>
+                    ) : null}
+                    {scaleImg === 'story' ? (
+                        <div className="w-full h-full flex flex-col gap-8 pb-[80px]">
+                            {story.map((p, i) => (
+                                <p
+                                    key={`story_${i}`}
+                                    className="text-white text-[24px] font-serif font-thin max-w-[1400px]"
+                                >
+                                    {p}
+                                </p>
+                            ))}
+                        </div>
+                    ) : null}
                 </div>
                 <div
                     className="w-full h-full flex flex-col gap-8 max-w-[1400px]"

@@ -153,3 +153,10 @@ export const story = [
     "I've been coding as a side-hustle to my full-time job since 2018, building small websites for friends and family while also building various side projects to enhance my web design and programming skills.",
     "In 2020 I moved to London and pursued my goal of working as full-time web developer. After hundreds of applications sent, several talks with recruiters and a few interviews, I landed a job as a software engineer at the most awesome startup. Now I'm spending all my time and effort in meeting my own professional expectations, and the ones of the people who gave me this chance by trying to create value everyday.",
 ]
+
+export const socials = [
+    { id: 'github', url: '' },
+    { id: 'insta', url: '' },
+    { id: 'linkedin', url: '' },
+    { id: 'x', url: '' },
+]
