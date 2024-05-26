@@ -5,11 +5,16 @@ import ContentManager from '@components/organisms/ContentManager'
 ---
 
 <Layout title="Welcome, I'm Andra!">
-    <main class="flex gap-8 h-dvh w-full max-w-[2000px]">
-        <div class="w-[60%] relative">
+    <main
+        class="flex gap-8 w-full max-w-[2000px] flex-col xl:flex-row xl:h-dvh xl:p-[40px]"
+    >
+        <div class="w-full h-dvh xl:h-auto xl:w-[60%] relative">
             <HeroImage client:only />
         </div>
-        <div class="w-[40%] overflow-x-hidden overflow-y-auto scrollbar-style">
+        <div
+            class="w-full xl:w-[40%] overflow-x-hidden overflow-y-auto scrollbar-style"
+            id="scrollable"
+        >
             <ContentManager client:load />
         </div>
     </main>
@@ -17,9 +22,9 @@ import ContentManager from '@components/organisms/ContentManager'
 
 <style>
     main {
-        padding: 40px;
         margin: auto;
     }
+
     .scrollbar-style {
     }
     .scrollbar-style::-webkit-scrollbar-thumb {

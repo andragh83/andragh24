@@ -12,6 +12,16 @@
     height: 140px;
 }
 
+@media (max-width: 1279px) {
+    .switchWrapper {
+        width: 100%;
+        top: 24px;
+        max-width: 100%;
+        background-color: transparent;
+        height: 140px;
+        padding-right: 0px;
+    }
+}
 .switchSubWrapper {
     padding-left: 24px;
     padding-right: 24px;

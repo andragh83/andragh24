@@ -91,7 +91,7 @@ const Card = ({ card }: Props) => {
             ) : null}
 
             {card.type === 'sub_card_list' && card.cards_list ? (
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 w-full">
                     {card.cards_list.map((list, i) => (
                         <div
                             className="flex flex-wrap gap-4 p-4 rounded-lg bg-card-bg"
@@ -121,7 +121,9 @@ const Card = ({ card }: Props) => {
                 </div>
             ) : null}
             {card.type === 'icon' && card.icon ? (
-                <CardIcon icon={card.icon} />
+                <a href={card.url} target="_blank">
+                    <CardIcon icon={card.icon} />
+                </a>
             ) : null}
         </li>
     )
