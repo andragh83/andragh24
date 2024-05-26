@@ -15,7 +15,7 @@
 @media (max-width: 1279px) {
     .switchWrapper {
         width: 100%;
-        top: 24px;
+        top: 0px;
         max-width: 100%;
         background-color: transparent;
         height: 140px;
@@ -28,4 +28,14 @@
     padding-bottom: 32px;
     padding-top: 16px;
     background: linear-gradient(#1f1f1f, #1f1f1f, #1f1f1f, #1f1f1f00);
+}
+
+@media (max-width: 1279px) {
+    .switchSubWrapper {
+        background: linear-gradient(#181818, #181818, #18181800);
+        height: 140px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+    }
 }

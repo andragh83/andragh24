@@ -12,7 +12,7 @@ import ContentManager from '@components/organisms/ContentManager'
             <HeroImage client:only />
         </div>
         <div
-            class="w-full xl:w-[40%] overflow-x-hidden overflow-y-auto scrollbar-style"
+            class="w-full xl:w-[40%] overflow-x-hidden xl:overflow-y-auto scrollbar-style"
             id="scrollable"
         >
             <ContentManager client:load />
@@ -23,6 +23,7 @@ import ContentManager from '@components/organisms/ContentManager'
 <style>
     main {
         margin: auto;
+        gap: 0px;
     }
 
     .scrollbar-style {

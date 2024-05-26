@@ -1,7 +1,7 @@
 import Switch from '@components/atoms/buttons/switch/switch'
 import Skills from '@components/molecules/Skills'
 import Work from '@components/molecules/Work'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 
 type Props = {}
@@ -9,24 +9,49 @@ type Props = {}
 const ContentManager = (props: Props) => {
     const [activeTab, setActiveTab] = useState<'skills' | 'work'>('skills')
     const [scrollableDiv, setScrollableDiv] = useState<any>(null)
+    const [isFixed, setIsFixed] = useState<any>(null)
+
+    const ref = useRef<HTMLDivElement | null>(null)
+
+    const handleScroll = () => {
+        let scrollPos = ref.current?.getBoundingClientRect().top
+
+        console.log('scoll pos', scrollPos)
+        if (scrollPos && scrollPos < 0) {
+            setIsFixed(true)
+        }
+        if (scrollPos && scrollPos > 0) {
+            setIsFixed(false)
+        }
+    }
 
     useEffect(() => {
         let div = document.getElementById('scrollable')
         if (div) {
             setScrollableDiv(div)
         }
+        document?.addEventListener('scroll', handleScroll)
+        return () => {
+            document?.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     return (
         <div
             id="skills_and_work"
-            className="relative p-6 flex flex-col gap-8 rounded-lg bg-gradient-to-b from-[#2727277f] to-[#181818] transition-all duration-200"
+            className="relative p-6 flex flex-col gap-8 rounded-lg bg-gradient-to-b to-[#2727277f] from-[#181818] transition-all duration-200"
         >
             <div className="h-[48px]" />
             <div
+                ref={ref}
                 className={`absolute w-full xl:fixed xl:w-[33%] z-10 ${styles.switchWrapper}`}
             >
-                <div className={`${styles.switchSubWrapper}`}>
+                <div
+                    className={`${styles.switchSubWrapper}`}
+                    style={
+                        isFixed ? { position: 'fixed', left: 0, right: 0 } : {}
+                    }
+                >
                     <Switch
                         activeTab={activeTab}
                         onClick={() => {
