@@ -41,6 +41,7 @@
 @media (max-width: 1536px) {
     .switchSubWrapper {
         padding-right: 48px;
+        padding-top: 0px;
     }
 }
 
