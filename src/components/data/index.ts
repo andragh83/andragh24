@@ -44,7 +44,7 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'T',
         icon_letter_2: 's',
-        text: 'I know my fundamentals so I can learn any javascript based framework. Currently my daily work involves, always typesafe:',
+        text: 'I know my fundamentals so I can learn any javascript based framework. Currently, I use in my daily work:',
     },
     skills_card_list: {
         type: 'sub_card_list',
@@ -60,7 +60,7 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'B',
         icon_letter_2: 'e',
-        text: 'I have basic knowledge of backend tech and of Postgress databases so I use supabase for my personal projects.',
+        text: 'I have very limited knowledge of backend tech and a bit of Postgress databases and so I find it very convenient to use Supabase for my personal projects.',
     },
     skills_card_supabase: {
         type: 'icon_and_text',
@@ -84,7 +84,7 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'D',
         icon_letter_2: 'e',
-        text: 'I also enjoy doing design work and I often create beautiful and clean UI flows which I then translate into code.',
+        text: 'I also enjoy doing design work and I often try to create beautiful and clean UI flows which I then translate into code.',
     },
     skills_card_figma: {
         type: 'icon_and_text',
@@ -151,8 +151,8 @@ export const work_cards_list = [
 ]
 
 export const story = [
-    "I learned programming in high school, with Pascal and C++, but I decided to further pursue economic studies and eventually made a career in that field. I've worked as a procurement specialist for 14 years. I restarted to code in 2016 by taking various online web development courses which I enjoyed a lot and I developed a real passion for creating websites.",
-    'I coded as a side-hustle to my full-time job between 2018 and 2020, building small websites for friends and family while also building various side projects to enhance my web design and programming skills.',
+    "I learned programming in high school, with Pascal and C++, but I decided to further pursue economic studies and eventually made a career in that field. I've worked as a procurement specialist for 14 years. I restarted to code in 2016 by taking some online web development courses which I enjoyed a lot and I developed a real passion for creating websites and webapps.",
+    'I coded as a side-hustle to my full-time job between 2018 and 2020, building small websites for friends and family while also building side projects to enhance my programming skills.',
     "In 2020 I moved to London and pursued my goal of working as full-time web developer. After hundreds of applications sent, several talks with recruiters and a few interviews, I landed a job as a software engineer at the most awesome startup. Now I'm spending all my time and effort in meeting my own professional expectations, and the ones of the people who gave me this chance by trying to create value everyday.",
 ]
 

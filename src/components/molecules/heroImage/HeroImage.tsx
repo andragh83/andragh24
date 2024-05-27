@@ -34,7 +34,7 @@ export default function HeroImage() {
                   ? windowDimensions?.height - 220
                   : windowDimensions?.height - 240)
             : scaleImgWithContent === 'contact'
-              ? 'calc(100dvh / 2 + 40px)'
+              ? 'calc(100dvh / 2)'
               : 180
     let leftTitlePlacement = isMobile
         ? 0
@@ -46,7 +46,7 @@ export default function HeroImage() {
         scaleImgWithContent === 'story'
             ? windowDimensions && windowDimensions?.height - 700
             : scaleImgWithContent === 'contact'
-              ? windowDimensions && windowDimensions.height / 2 - 240
+              ? windowDimensions && windowDimensions.height / 2 - 160
               : undefined
 
     let leftContentPlacement = isMobile
@@ -209,7 +209,7 @@ export default function HeroImage() {
                     }}
                 >
                     {scaleImgWithContent === 'contact' ? (
-                        <div className="w-full flex flex-col gap-8 items-center justify-center">
+                        <div className="w-full flex flex-col pt-8 xl:pt-0 gap-4 sm:gap-8 items-center justify-center">
                             <p className="text-white uppercase text-[16px] xl:text-[24px]">
                                 find me on
                             </p>

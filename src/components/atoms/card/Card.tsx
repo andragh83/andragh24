@@ -56,7 +56,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'leters_icon_and_text_and_list' ? (
                 <>
-                    <div className="border-[1px] border-white h-full w-[120px] min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
+                    <div className="border-[1px] border-white h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px]  px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
                         <p className="text-[80px] text-white  p-0 m-0 leading-[80px] uppercase">
                             {card.icon_letter_1 ?? null}
                         </p>
