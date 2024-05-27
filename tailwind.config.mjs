@@ -13,6 +13,8 @@ export default {
             },
             colors: {
                 'off-black': '#343434',
+                'off-white': '#fafafa',
+                'light-grey': '#d2d2d2',
                 'card-bg': 'var(--card-bg)',
             },
         },

@@ -33,12 +33,12 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'leters_icon_and_text' ? (
                 <>
-                    <div className="border-[1px] border-white h-full w-[120px] min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
-                        <p className="text-[80px] text-white  p-0 m-0 leading-[80px] uppercase">
+                    <div className="border-[1px] border-white h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight">
+                        <p className="text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-white p-0 m-0  uppercase">
                             {card.icon_letter_1 ?? null}
                         </p>
                         <p
-                            className={`text-[60px] text-white p-0 m-0 leading-[80px] -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
+                            className={`text-[40px] leading-[60px] sm:text-[60px] sm:leading-[80px] text-white p-0 m-0 -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
                         >
                             {card.icon_letter_2 ?? null}
                         </p>

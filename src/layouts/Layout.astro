@@ -1,9 +1,10 @@
 ---
 interface Props {
     title: string
+    imagePath: string
 }
 
-const { title } = Astro.props
+const { title, imagePath } = Astro.props
 import '@fontsource-variable/urbanist'
 import '@fontsource-variable/eb-garamond'
 ---
@@ -12,9 +13,99 @@ import '@fontsource-variable/eb-garamond'
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Meta Description -->
         <meta
             name="description"
-            content="Andra Ghitulescu - frontend software engineer"
+            content="Hi! I'm Andra Ghitulescu, frontend software engineer, passionate JS/TS enthusiast with a flair for UI/UX design."
+        />
+
+        <!-- Open Graph Meta Tags -->
+        <meta
+            property="og:title"
+            content="Andra Ghitulescu - Frontend Software Engineer"
+        />
+        <meta
+            property="og:description"
+            content="Hi! I'm Andra Ghitulescu, frontend software engineer, passionate JS/TS enthusiast with a flair for UI/UX design."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.andragh.co.uk" />
+        <meta property="og:image" content={imagePath} />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Andra Ghitulescu - Frontend Software Engineer"
+        />
+        <meta
+            name="twitter:description"
+            content="Hi! I'm Andra Ghitulescu, frontend software engineer, passionate JS/TS enthusiast with a flair for UI/UX design."
+        />
+        <meta name="twitter:image" content={imagePath} />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://www.andragh.co.uk" />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            href="https://www.andragh.co.uk/favicon.ico"
+            type="image/x-icon"
+        />
+
+        <!-- Schema.org Structured Data Markup -->
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Andra Ghitulescu',
+                url: 'https://www.andragh.co.uk',
+                sameAs: [
+                    'https://www.linkedin.com/in/andra-ghitulescu',
+                    'https://www.github.com/andragh83',
+                    'https://x.com/AndraGhitulescu',
+                    'https://www.instagram.com/andragh83',
+                ],
+                jobTitle: 'Frontend Software Engineer',
+                description:
+                    "Hi! I'm Andra Ghitulescu, frontend software engineer, passionate JS/TS enthusiast with a flair for UI/UX design.",
+                knowsAbout: [
+                    'Javascript',
+                    'Typescript',
+                    'React',
+                    'NextJs',
+                    'Redux',
+                    'Saga',
+                    'React Native',
+                    'Expo',
+                    'Figma',
+                ],
+                worksFor: [
+                    {
+                        '@type': 'Organization',
+                        name: 'Custodian',
+                        sameAs: 'https://www.custodian.club',
+                    },
+                    {
+                        '@type': 'Organization',
+                        name: 'FaveIT',
+                        sameAs: 'https://www.faveitapp.com',
+                    },
+                ],
+                alumniOf: {
+                    '@type': 'CollegeOrUniversity',
+                    name: 'FABIZ',
+                },
+                mainEntityOfPage: {
+                    '@type': 'WebPage',
+                    '@id': 'https://www.andragh.co.uk',
+                },
+                image: imagePath,
+            })}
         />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -40,9 +131,9 @@ import '@fontsource-variable/eb-garamond'
     }
     html {
         font-family: 'Urbanist', sans-serif;
-        background: #13151a;
-        /* background-size: 224px; */
+        background: #181818;
     }
+
     code {
         font-family:
             'EB Garamond Variable',

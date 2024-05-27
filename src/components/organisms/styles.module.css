@@ -5,9 +5,9 @@
 .switchWrapper {
     width: 40%;
     max-width: 800px;
-    top: 40px;
+    top: 24px;
     margin-left: -24px;
-    padding-right: 48px;
+    padding-right: 0px;
     background-color: transparent;
     height: 140px;
 }
@@ -22,20 +22,40 @@
         padding-right: 0px;
     }
 }
+
+@media (max-width: 640px) {
+    .switchWrapper {
+        margin-left: -1rem;
+        padding-right: 0;
+    }
+}
+
 .switchSubWrapper {
     padding-left: 24px;
-    padding-right: 24px;
+    padding-right: 56px;
     padding-bottom: 32px;
     padding-top: 16px;
-    background: linear-gradient(#1f1f1f, #1f1f1f, #1f1f1f, #1f1f1f00);
+    background: linear-gradient(#181818, #181818, #18181800);
+}
+
+@media (max-width: 1536px) {
+    .switchSubWrapper {
+        padding-right: 48px;
+    }
 }
 
 @media (max-width: 1279px) {
     .switchSubWrapper {
-        background: linear-gradient(#181818, #181818, #18181800);
         height: 140px;
         position: sticky;
         position: -webkit-sticky;
         top: 0px;
+    }
+}
+
+@media (max-width: 640px) {
+    .switchSubWrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

@@ -2,11 +2,15 @@
 import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
 import ContentManager from '@components/organisms/ContentManager'
+import profile_img from '@assets/profile.jpg'
 ---
 
-<Layout title="Welcome, I'm Andra!">
+<Layout
+    title="Andra Ghitulescu - Frontend Software Engineer"
+    imagePath={profile_img.src}
+>
     <main
-        class="flex gap-8 w-full max-w-[2000px] flex-col xl:flex-row xl:h-dvh xl:p-[40px]"
+        class="flex gap-8 2xl:gap-12 w-full max-w-[2000px] flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
     >
         <div class="w-full h-dvh xl:h-auto xl:w-[60%] relative">
             <HeroImage client:only />

@@ -4,9 +4,7 @@ import Work from '@components/molecules/Work'
 import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 
-type Props = {}
-
-const ContentManager = (props: Props) => {
+const ContentManager = () => {
     const [activeTab, setActiveTab] = useState<'skills' | 'work'>('skills')
     const [scrollableDiv, setScrollableDiv] = useState<any>(null)
     const [isFixed, setIsFixed] = useState<any>(null)
@@ -16,7 +14,6 @@ const ContentManager = (props: Props) => {
     const handleScroll = () => {
         let scrollPos = ref.current?.getBoundingClientRect().top
 
-        console.log('scoll pos', scrollPos)
         if (scrollPos && scrollPos < 0) {
             setIsFixed(true)
         }
@@ -30,6 +27,7 @@ const ContentManager = (props: Props) => {
         if (div) {
             setScrollableDiv(div)
         }
+
         document?.addEventListener('scroll', handleScroll)
         return () => {
             document?.removeEventListener('scroll', handleScroll)
@@ -39,7 +37,7 @@ const ContentManager = (props: Props) => {
     return (
         <div
             id="skills_and_work"
-            className="relative p-6 flex flex-col gap-8 rounded-lg bg-gradient-to-b to-[#2727277f] from-[#181818] transition-all duration-200"
+            className="relative p-4 sm:p-6 flex flex-col gap-8 rounded-lg transition-all duration-200"
         >
             <div className="h-[48px]" />
             <div
@@ -61,6 +59,11 @@ const ContentManager = (props: Props) => {
                                     behavior: 'smooth',
                                 })
                             }
+
+                            ref.current?.scrollIntoView({
+                                behavior: 'smooth',
+                            })
+
                             activeTab === 'skills'
                                 ? setActiveTab('work')
                                 : setActiveTab('skills')
