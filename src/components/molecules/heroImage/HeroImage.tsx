@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import heroImage from '../../../assets/eu_cropped.jpg'
 import styles from '../heroImage/styles.module.css'
 import CrossIcon from '@components/atoms/icons/cross'
@@ -15,6 +15,8 @@ export default function HeroImage() {
     >(undefined)
 
     const [revealImgContent, setRevealImgContent] = useState<boolean>(false)
+    const [showScrollIndicator, setShowScrollIndicator] =
+        useState<boolean>(true)
 
     let windowDimensions = window ? useWindowDimensions() : undefined
 
@@ -78,6 +80,21 @@ export default function HeroImage() {
         }, 300)
     }
 
+    const handleScroll = () => {
+        if (window && window.scrollY > 0) {
+            setShowScrollIndicator(false)
+        } else {
+            setShowScrollIndicator(true)
+        }
+    }
+
+    useEffect(() => {
+        document?.addEventListener('scroll', handleScroll)
+        return () => {
+            document?.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <section
             className={`${styles.heroImageWrapper} rounded-lg`}
@@ -94,6 +111,9 @@ export default function HeroImage() {
                     : { zIndex: 11 }
             }
         >
+            {showScrollIndicator ? (
+                <div className={styles.scrollIndicator}>╲╱</div>
+            ) : null}
             <img
                 src={heroImage.src}
                 width={heroImage.width}
@@ -134,7 +154,7 @@ export default function HeroImage() {
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
                 style={{
                     background:
-                        'linear-gradient(#18181847, #1818186d, #181818c0, #181818)',
+                        'linear-gradient(#18181847, #1818186d, #181818e1, #181818)',
                     transition: 'all 300ms',
                     opacity: scaleImgWithContent ? 0 : 1,
                 }}
@@ -279,7 +299,7 @@ export default function HeroImage() {
                         transition: 'all 500ms',
                         height: !scaleImgWithContent ? 'auto' : 0,
                         position: 'absolute',
-                        bottom: 80,
+                        bottom: 96,
                         paddingLeft: isMobile ? 0 : 64,
                     }}
                 >
@@ -289,7 +309,7 @@ export default function HeroImage() {
                                 onBtnClick('story')
                             }}
                             className={`${styles.btnTxt} rounded-full bg-white text-off-black 
-                                        py-[12px] px-[24px] uppercase text-[18px]`}
+                                        py-[12px] px-[24px] uppercase text-[18px] leading-[18px]`}
                         >
                             My story
                         </button>
@@ -298,7 +318,7 @@ export default function HeroImage() {
                                 onBtnClick('contact')
                             }}
                             className={`${styles.btnTxt} rounded-full bg-off-text text-white 
-                                        py-[12px] px-[24px] uppercase text-[18px] border-white border`}
+                                        py-[12px] px-[24px] uppercase text-[18px] leading-[18px] border-white border`}
                         >
                             Let's chat
                         </button>
