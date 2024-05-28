@@ -49,7 +49,30 @@ const Card = ({ card }: Props) => {
                             <p className={`${styles.cardText}`}>{card.text}</p>
                         ) : null}
                         {card.text_2 ? (
-                            <p className={styles.cardText}>{card.text_2}</p>
+                            card.url && !card.text_3 ? (
+                                <a
+                                    className={`${styles.cardText} underline underline-offset-4`}
+                                    href={card.url}
+                                    target="_blank"
+                                >
+                                    {card.text_2}
+                                </a>
+                            ) : (
+                                <p className={styles.cardText}>{card.text_2}</p>
+                            )
+                        ) : null}
+                        {card.text_3 ? (
+                            card.url ? (
+                                <a
+                                    className={`${styles.cardText} underline underline-offset-4`}
+                                    href={card.url}
+                                    target="_blank"
+                                >
+                                    {card.text_3}
+                                </a>
+                            ) : (
+                                <p className={styles.cardText}>{card.text_3}</p>
+                            )
                         ) : null}
                     </div>
                 </>

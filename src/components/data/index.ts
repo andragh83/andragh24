@@ -25,6 +25,7 @@ export type ICard = {
     icon_letter_2?: string
     text?: string
     text_2?: string
+    text_3?: string
     cards_list?: ICardIcon[][]
     text_list?: string[]
     icon?: ICardIcon
@@ -95,8 +96,10 @@ export const data: { [key: string]: ICard } = {
         type: 'leters_icon_and_text',
         style: 'outlined',
         icon_letter_1: 'C',
-        text: 'I’m part of CUSTODIAN, a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars. ',
+        text: 'I’m part of CUSTODIAN, a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars.',
         text_2: 'We’re a small team of passionate people, shipping at a fast pace without compromising on quality.',
+        text_3: 'Check out Custodian.',
+        url: 'https://www.custodian.club',
     },
     work_card_description: {
         type: 'leters_icon_and_text_and_list',
@@ -120,7 +123,8 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'F',
         text: 'FaveIT is an app that enables its users to curate desired gifts and share them with whoever they choose. It is built with React Native on top of SUPABASE.',
-        text_2: 'Go check it out!',
+        text_2: 'Find out more about FaveIT',
+        url: 'https://www.faveitapp.com/',
     },
     work_card_faveit_icon: {
         type: 'icon',

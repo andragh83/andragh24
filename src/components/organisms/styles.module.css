@@ -48,7 +48,7 @@
 @media (max-width: 1279px) {
     .switchSubWrapper {
         padding-right: 16px;
-        height: 140px;
+        height: 100px;
         position: sticky;
         position: -webkit-sticky;
         top: 0px;

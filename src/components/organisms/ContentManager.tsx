@@ -37,7 +37,7 @@ const ContentManager = () => {
     return (
         <div
             id="skills_and_work"
-            className="relative p-4 sm:p-6 flex flex-col gap-4 xl:gap-2 rounded-lg transition-all duration-200"
+            className="relative p-4 sm:p-6 flex flex-col gap-6 xl:gap-2 rounded-lg transition-all duration-200"
         >
             <div className="h-[48px]" />
             <div
