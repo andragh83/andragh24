@@ -95,7 +95,7 @@ export const data: { [key: string]: ICard } = {
         type: 'leters_icon_and_text',
         style: 'outlined',
         icon_letter_1: 'C',
-        text: 'I’m part of CUSTODIAN, a brilliant startup on a mission to disrupt the classic cars insurance market. ',
+        text: 'I’m part of CUSTODIAN, a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars. ',
         text_2: 'We’re a small team of passionate people, shipping at a fast pace without compromising on quality.',
     },
     work_card_description: {
