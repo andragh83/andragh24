@@ -130,7 +130,10 @@ export default function HeroImage() {
                     }
                 }}
                 className={styles.scrollIndicator}
-                style={{ opacity: showScrollIndicator ? 1 : 0 }}
+                style={{
+                    opacity:
+                        showScrollIndicator && !scaleImgWithContent ? 1 : 0,
+                }}
             >
                 ╲╱
             </div>
