@@ -19,8 +19,9 @@
 }
 
 .scrollIndicator {
+    padding: 12px;
     animation: bounce 1s ease-in-out infinite;
-    bottom: 0;
+    bottom: 16px;
     transform: translate(-50%, 0);
     color: #fff;
     content: '╲╱';
@@ -34,6 +35,7 @@
     text-align: center;
     width: 6rem;
     z-index: 5;
+    transition: opacity 200ms;
 }
 
 @media (min-width: 1280px) {

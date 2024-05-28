@@ -18,6 +18,9 @@ export default function HeroImage() {
     const [showScrollIndicator, setShowScrollIndicator] =
         useState<boolean>(true)
 
+    const [skillsAndWorkDiv, setSkillsAndWorkDiv] =
+        useState<HTMLElement | null>(null)
+
     let windowDimensions = window ? useWindowDimensions() : undefined
 
     let leftTranslate = windowDimensions
@@ -89,6 +92,10 @@ export default function HeroImage() {
     }
 
     useEffect(() => {
+        let div = document.getElementById('skills_and_work')
+        if (div) {
+            setSkillsAndWorkDiv(div)
+        }
         document?.addEventListener('scroll', handleScroll)
         return () => {
             document?.removeEventListener('scroll', handleScroll)
@@ -111,9 +118,21 @@ export default function HeroImage() {
                     : { zIndex: 11 }
             }
         >
-            {showScrollIndicator ? (
-                <div className={styles.scrollIndicator}>╲╱</div>
-            ) : null}
+            <div
+                role="button"
+                onClick={() => {
+                    if (skillsAndWorkDiv) {
+                        skillsAndWorkDiv?.scrollIntoView({
+                            behavior: 'smooth',
+                        })
+                    }
+                }}
+                className={styles.scrollIndicator}
+                style={{ opacity: showScrollIndicator ? 1 : 0 }}
+            >
+                ╲╱
+            </div>
+
             <img
                 src={heroImage.src}
                 width={heroImage.width}
@@ -299,7 +318,7 @@ export default function HeroImage() {
                         transition: 'all 500ms',
                         height: !scaleImgWithContent ? 'auto' : 0,
                         position: 'absolute',
-                        bottom: 96,
+                        bottom: 100,
                         paddingLeft: isMobile ? 0 : 64,
                     }}
                 >
@@ -309,7 +328,7 @@ export default function HeroImage() {
                                 onBtnClick('story')
                             }}
                             className={`${styles.btnTxt} rounded-full bg-white text-off-black 
-                                        py-[12px] px-[24px] uppercase text-[18px] leading-[18px]`}
+                                        py-[13px] px-[24px] xl:py-[12px] xl:px-[24px] uppercase text-[16px] leading-[16px] xl:text-[18px] xl:leading-[18px]`}
                         >
                             My story
                         </button>
@@ -318,7 +337,7 @@ export default function HeroImage() {
                                 onBtnClick('contact')
                             }}
                             className={`${styles.btnTxt} rounded-full bg-off-text text-white 
-                                        py-[12px] px-[24px] uppercase text-[18px] leading-[18px] border-white border`}
+                                        py-[13px] px-[24px] xl:py-[12px] xl:px-[24px] uppercase text-[16px] leading-[16px] xl:text-[18px] xl:leading-[18px] border-white border`}
                         >
                             Let's chat
                         </button>
