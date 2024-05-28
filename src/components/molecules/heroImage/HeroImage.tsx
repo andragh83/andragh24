@@ -23,11 +23,11 @@ export default function HeroImage() {
 
     let windowDimensions = window ? useWindowDimensions() : undefined
 
-    let leftTranslate = windowDimensions
-        ? windowDimensions?.width > 2000
-            ? 0 - (windowDimensions.width - 2000) / 2 - 40
-            : -40
-        : -40
+    // let leftTranslate = windowDimensions
+    //     ? windowDimensions?.width > 2000
+    //         ? 0 - (windowDimensions.width - 2000) / 2 - 40
+    //         : -40
+    //     : -40
 
     let isMobile =
         windowDimensions?.width && windowDimensions.width < 1280 ? true : false
@@ -40,7 +40,9 @@ export default function HeroImage() {
                   : windowDimensions?.height - 240)
             : scaleImgWithContent === 'contact'
               ? 'calc(100dvh / 2)'
-              : 180
+              : isMobile && windowDimensions && windowDimensions?.height > 1000
+                ? 300
+                : 200
     let leftTitlePlacement = isMobile
         ? 0
         : scaleImgWithContent === 'contact'
@@ -113,7 +115,7 @@ export default function HeroImage() {
                           height: '100dvh',
                           transform: isMobile
                               ? undefined
-                              : `translate(${leftTranslate}px, -40px)`,
+                              : `translate(-40px, -40px)`,
                       }
                     : { zIndex: 11 }
             }
@@ -312,13 +314,18 @@ export default function HeroImage() {
                 </div>
                 <div
                     className="items-center xl:items-start w-full
-                                h-full flex flex-col gap-8 max-w-[1400px]"
+                                h-full flex flex-col gap-8 "
                     style={{
                         opacity: !scaleImgWithContent ? 1 : 0,
-                        transition: 'all 500ms',
+                        transition: 'all 200ms',
                         height: !scaleImgWithContent ? 'auto' : 0,
                         position: 'absolute',
-                        bottom: 100,
+                        bottom:
+                            isMobile &&
+                            windowDimensions &&
+                            windowDimensions?.height > 1000
+                                ? 200
+                                : 120,
                         paddingLeft: isMobile ? 0 : 64,
                     }}
                 >
