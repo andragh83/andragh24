@@ -156,8 +156,8 @@ export const work_cards_list = [
 
 export const story = [
     "I learned programming in high school, with Pascal and C++, but I decided to further pursue economic studies and eventually made a career in that field. I've worked as a procurement specialist for 14 years. I restarted to code in 2016 by taking some online web development courses which I enjoyed a lot and I developed a real passion for creating websites and webapps.",
-    'I coded as a side-hustle to my full-time job between 2018 and 2020, building small websites for friends and family while also building side projects to enhance my programming skills.',
-    "In 2020 I moved to London and pursued my goal of working as full-time web developer. After hundreds of applications sent, several talks with recruiters and a few interviews, I landed a job as a software engineer at the most awesome startup. Now I'm spending all my time and effort in meeting my own professional expectations, and the ones of the people who gave me this chance by trying to create value everyday.",
+    'I coded as a side-hustle to my full-time job between 2018 and 2020, building small websites for friends and family while also developing lots of side projects to enhance my programming skills.',
+    "In 2020 I moved to London and pursued my goal of working as full-time frontend software engineer. After hundreds of applications sent, several talks with recruiters and a few interviews, I landed a job at the most awesome startup. Now I'm spending all my time and effort in meeting my own professional expectations, and the ones of the people who gave me this chance by trying to create value everyday.",
 ]
 
 export const socials = [
