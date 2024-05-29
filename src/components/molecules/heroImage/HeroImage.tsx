@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import heroImage from '../../../assets/eu_cropped.jpg'
 import styles from '../heroImage/styles.module.css'
 import CrossIcon from '@components/atoms/icons/cross'
@@ -10,11 +10,13 @@ import LinkedinIcon from '@components/atoms/icons/linkedin'
 import GithubIcon from '@components/atoms/icons/github'
 
 export default function HeroImage() {
+    const [imageLoading, setImageLoading] = useState<boolean>(true)
     const [scaleImgWithContent, setScaleImgWithContent] = useState<
         undefined | 'story' | 'contact'
     >(undefined)
 
     const [revealImgContent, setRevealImgContent] = useState<boolean>(false)
+
     const [showScrollIndicator, setShowScrollIndicator] =
         useState<boolean>(true)
 
@@ -94,6 +96,12 @@ export default function HeroImage() {
     }
 
     useEffect(() => {
+        const spinner = document.querySelector('.spinner')
+        if (spinner) {
+            spinner.setAttribute('opacity', '0')
+            setTimeout(() => spinner.remove(), 200)
+        }
+
         let div = document.getElementById('skills_and_work')
         if (div) {
             setSkillsAndWorkDiv(div)
@@ -103,6 +111,8 @@ export default function HeroImage() {
             document?.removeEventListener('scroll', handleScroll)
         }
     }, [])
+
+    const imgRef = useRef<HTMLImageElement | null>(null)
 
     return (
         <section
@@ -139,10 +149,17 @@ export default function HeroImage() {
             </div>
 
             <img
+                ref={imgRef}
                 src={heroImage.src}
                 width={heroImage.width}
+                onLoad={() => {
+                    setImageLoading(false)
+                    if (imgRef.current) {
+                        imgRef.current.style.opacity = '1'
+                    }
+                }}
                 alt="Andra Gh image"
-                className={`absolute z-0 top-0 bottom-0 left-0 right-0 w-full h-full 
+                className={`absolute opacity-0 z-0 top-0 bottom-0 left-0 right-0 w-full h-full 
                             rounded-lg object-cover ${styles.flipHorizontally}`}
                 style={
                     scaleImgWithContent
@@ -162,6 +179,16 @@ export default function HeroImage() {
                           }
                 }
             />
+            {imageLoading ? (
+                <div
+                    className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full 
+                            rounded-lg overflow-hidden`}
+                >
+                    <div className="relative w-full h-full">
+                        <div className={styles.shimmer} />
+                    </div>
+                </div>
+            ) : null}
 
             <div
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
