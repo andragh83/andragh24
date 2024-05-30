@@ -53,9 +53,7 @@ const ImageCarousel = ({
                                       width: '100%',
                                       height: '100%',
                                       objectFit: 'cover',
-                                      objectPosition: isMobile
-                                          ? 'right top'
-                                          : 'right -240px',
+                                      objectPosition: 'right top',
                                       transition: 'all 500ms',
                                       opacity:
                                           index === currentImageIndex ? 1 : 0,

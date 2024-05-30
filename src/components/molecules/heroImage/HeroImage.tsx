@@ -37,6 +37,8 @@ export default function HeroImage() {
 
     let isMobile =
         windowDimensions?.width && windowDimensions.width < 1280 ? true : false
+    let isSmallerScreen =
+        windowDimensions?.width && windowDimensions.width < 1536 ? true : false
 
     let bottomTitlePlacement =
         scaleImgWithContent === 'story'
@@ -127,7 +129,9 @@ export default function HeroImage() {
                           height: '100dvh',
                           transform: isMobile
                               ? undefined
-                              : `translate(-40px, -40px)`,
+                              : isSmallerScreen
+                                ? `translate(-24px, -24px)`
+                                : `translate(-40px, -40px)`,
                       }
                     : { zIndex: 11 }
             }
