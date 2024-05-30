@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-import heroImage from '../../../assets/eu_cropped.jpg'
+import { useEffect, useState } from 'react'
+import heroImage from '../../../assets/profile0.jpg'
+import heroImage1 from '../../../assets/profile1.jpg'
+import heroImage2 from '../../../assets/profile2.jpg'
+import heroImage3 from '../../../assets/profile3.jpg'
 import styles from '../heroImage/styles.module.css'
 import CrossIcon from '@components/atoms/icons/cross'
 import useWindowDimensions from '@components/hooks/useWindowDimensions'
@@ -8,9 +11,10 @@ import InstaIcon from '@components/atoms/icons/insta'
 import XIcon from '@components/atoms/icons/x'
 import LinkedinIcon from '@components/atoms/icons/linkedin'
 import GithubIcon from '@components/atoms/icons/github'
+import ImageCarousel from '../carousel/imageCarousel'
 
 export default function HeroImage() {
-    const [imageLoading, setImageLoading] = useState<boolean>(true)
+    // const [imageLoading, setImageLoading] = useState<boolean>(true)
     const [scaleImgWithContent, setScaleImgWithContent] = useState<
         undefined | 'story' | 'contact'
     >(undefined)
@@ -33,6 +37,8 @@ export default function HeroImage() {
 
     let isMobile =
         windowDimensions?.width && windowDimensions.width < 1280 ? true : false
+    let isSmallerScreen =
+        windowDimensions?.width && windowDimensions.width < 1536 ? true : false
 
     let bottomTitlePlacement =
         scaleImgWithContent === 'story'
@@ -112,8 +118,6 @@ export default function HeroImage() {
         }
     }, [])
 
-    const imgRef = useRef<HTMLImageElement | null>(null)
-
     return (
         <section
             className={`${styles.heroImageWrapper} rounded-lg`}
@@ -125,7 +129,9 @@ export default function HeroImage() {
                           height: '100dvh',
                           transform: isMobile
                               ? undefined
-                              : `translate(-40px, -40px)`,
+                              : isSmallerScreen
+                                ? `translate(-24px, -24px)`
+                                : `translate(-40px, -40px)`,
                       }
                     : { zIndex: 11 }
             }
@@ -148,47 +154,11 @@ export default function HeroImage() {
                 ╲╱
             </div>
 
-            <img
-                ref={imgRef}
-                src={heroImage.src}
-                width={heroImage.width}
-                onLoad={() => {
-                    setImageLoading(false)
-                    if (imgRef.current) {
-                        imgRef.current.style.opacity = '1'
-                    }
-                }}
-                alt="Andra Gh image"
-                className={`absolute opacity-0 z-0 top-0 bottom-0 left-0 right-0 w-full h-full 
-                            rounded-lg object-cover ${styles.flipHorizontally}`}
-                style={
-                    scaleImgWithContent
-                        ? {
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              objectPosition: isMobile
-                                  ? 'left center'
-                                  : 'right -240px',
-                              transition: 'all 500ms',
-                          }
-                        : {
-                              objectPosition: isMobile
-                                  ? 'left center'
-                                  : 'right top',
-                          }
-                }
+            <ImageCarousel
+                images={[heroImage, heroImage1, heroImage2, heroImage3]}
+                isScaled={scaleImgWithContent ? true : false}
+                isMobile={isMobile}
             />
-            {imageLoading ? (
-                <div
-                    className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full 
-                            rounded-lg overflow-hidden`}
-                >
-                    <div className="relative w-full h-full">
-                        <div className={styles.shimmer} />
-                    </div>
-                </div>
-            ) : null}
 
             <div
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
@@ -205,7 +175,7 @@ export default function HeroImage() {
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
                 style={{
                     background:
-                        'linear-gradient(#18181847, #1818186d, #181818e1, #181818)',
+                        'linear-gradient(#18181847, #1818186d, #181818ce, #181818)',
                     transition: 'all 300ms',
                     opacity: scaleImgWithContent ? 0 : 1,
                 }}
