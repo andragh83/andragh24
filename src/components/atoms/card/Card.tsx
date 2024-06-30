@@ -33,7 +33,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'leters_icon_and_text' ? (
                 <>
-                    <div className="border-[1px] border-white h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight">
+                    <div className="border-[1px] border-[#4b4b4b] h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight">
                         <p className="text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-white p-0 m-0  uppercase">
                             {card.icon_letter_1 ?? null}
                         </p>
@@ -79,7 +79,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'leters_icon_and_text_and_list' ? (
                 <>
-                    <div className="border-[1px] border-white h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px]  px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
+                    <div className="border-[1px] border-[#4b4b4b] h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px]  px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
                         <p className="text-[80px] text-white  p-0 m-0 leading-[80px] uppercase">
                             {card.icon_letter_1 ?? null}
                         </p>
@@ -123,16 +123,16 @@ const Card = ({ card }: Props) => {
                             {list.map((item, i) => (
                                 <div
                                     key={`sub_card_list_item_${i}`}
-                                    className={`flex items-center gap-4  ${item === 'typescript' ? 'py-0' : 'border-white border-[1px] px-4'}  rounded-lg py-2`}
+                                    className={`flex items-center gap-4  ${item === 'typescript' ? 'py-0' : 'border-[#4b4b4b] border-[1px] px-4'}  rounded-lg py-2`}
                                 >
                                     <div
                                         className={
                                             item === 'typescript'
-                                                ? 'border-[#C2C2C2] border-[1px] px-2 py-3'
+                                                ? 'border-[#4b4b4b] border-[1px] px-2 py-3'
                                                 : ''
                                         }
                                     >
-                                        <CardIcon icon={item} />
+                                        <CardIcon icon={item} size={32} />
                                     </div>
                                     <p className="uppercase text-white text-[22px]">
                                         {item}
@@ -145,7 +145,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'icon' && card.icon ? (
                 <a href={card.url} target="_blank">
-                    <CardIcon icon={card.icon} />
+                    <CardIcon icon={card.icon} size={32} />
                 </a>
             ) : null}
         </li>
