@@ -4,7 +4,6 @@ import styles from './styles.module.css'
 const ImageCarousel = ({
     images,
     isScaled,
-    isMobile,
 }: {
     images: ImageMetadata[]
     isScaled: boolean
@@ -16,14 +15,12 @@ const ImageCarousel = ({
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-        }, 5000)
+        }, 3000)
 
         return () => {
             clearInterval(interval)
         }
     }, [])
-
-    const imgRef = useRef<HTMLImageElement | null>(null)
 
     return (
         <>
@@ -31,18 +28,10 @@ const ImageCarousel = ({
                 return (
                     <img
                         key={index}
-                        ref={imgRef}
                         src={image.src}
                         width={image.width}
                         onLoad={() => {
                             setImageLoading(false)
-                            if (imgRef.current) {
-                                if (currentImageIndex === index) {
-                                    imgRef.current.style.opacity = '1'
-                                } else {
-                                    imgRef.current.style.opacity = '0'
-                                }
-                            }
                         }}
                         alt="Andra Gh image"
                         className={`absolute opacity-0 z-0 top-0 bottom-0 left-0 right-0 w-full h-full 
