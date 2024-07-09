@@ -123,7 +123,7 @@ const Card = ({ card }: Props) => {
                             {list.map((item, i) => (
                                 <div
                                     key={`sub_card_list_item_${i}`}
-                                    className={`flex items-center gap-4  ${item === 'typescript' ? 'py-0' : 'border-[#4b4b4b] border-[1px] px-4'}  rounded-lg py-2`}
+                                    className={`flex items-center gap-2  ${item === 'typescript' ? 'py-0' : 'border-[#4b4b4b] border-[1px] px-5'}  rounded-lg py-2`}
                                 >
                                     <div
                                         className={
@@ -132,9 +132,9 @@ const Card = ({ card }: Props) => {
                                                 : ''
                                         }
                                     >
-                                        <CardIcon icon={item} size={32} />
+                                        <CardIcon icon={item} size={28} />
                                     </div>
-                                    <p className="uppercase text-white text-[22px]">
+                                    <p className="uppercase text-white text-[18px] leading-[18px]">
                                         {item}
                                     </p>
                                 </div>
@@ -145,7 +145,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'icon' && card.icon ? (
                 <a href={card.url} target="_blank">
-                    <CardIcon icon={card.icon} size={32} />
+                    <CardIcon icon={card.icon} size={28} />
                 </a>
             ) : null}
         </li>
