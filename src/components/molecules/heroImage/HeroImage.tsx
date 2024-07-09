@@ -251,7 +251,7 @@ export default function HeroImage() {
                 >
                     {scaleImgWithContent === 'contact' ? (
                         <div className="w-full flex flex-col pt-8 xl:pt-0 gap-4 sm:gap-8 items-center justify-center">
-                            <p className="text-white uppercase text-[16px] xl:text-[24px]">
+                            <p className="text-white uppercase text-[16px] xl:text-[24px] font-light">
                                 find me on
                             </p>
                             <div className="w-full flex gap-4 items-center justify-center">
@@ -304,7 +304,7 @@ export default function HeroImage() {
                                 <p
                                     key={`story_${i}`}
                                     className="text-white text-[24px] font-serif 
-                                                font-thin max-w-[1400px]"
+                                                font-light max-w-[1400px]"
                                 >
                                     {p}
                                 </p>
