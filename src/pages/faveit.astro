@@ -1,15 +1,22 @@
 ---
-import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
-
 import profile_img from '@assets/profile.jpg'
+import CheckIcon from '@components/atoms/icons/check'
+import faveit_components from '@assets/faveIT_figma_designs_components.png'
+import faveit_screens_1 from '@assets/faveIT_figma_designs_screens_1.png'
+import faveit_screens_2 from '@assets/faveIT_figma_designs_screens_2.png'
+import WebsiteIcon from '@components/atoms/icons/website'
+import Insta from '@components/atoms/icons/insta'
+import XIcon from '@components/atoms/icons/x'
 ---
 
 <Layout
     title="Andra Ghitulescu - Frontend Software Engineer"
     imagePath={profile_img.src}
 >
-    <main class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh">
+    <main
+        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh pb-10 md:pb-4 opacity-0 transition-opacity duration-500"
+    >
         <div class="flex flex-col w-full gap-8">
             <div
                 class="flex items-center justify-between border-b border-border-muted py-6 px-[24px] 2xl:px-[40px]"
@@ -32,10 +39,12 @@ import profile_img from '@assets/profile.jpg'
                     >
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
-                    <span class="text-text-default">Go Back</span>
+                    <span class="text-text-default hidden md:block"
+                        >Go Back</span
+                    >
                 </a>
                 <h1
-                    class="text-3xl font-bold text-text-default absolute left-1/2 -translate-x-1/2"
+                    class="text-xl md:text-3xl font-semibold text-text-default absolute left-1/2 -translate-x-1/2"
                 >
                     FaveIT
                 </h1>
@@ -43,25 +52,209 @@ import profile_img from '@assets/profile.jpg'
             </div>
 
             <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-[24px] 2xl:px-[40px]"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6 px-[24px] 2xl:px-[40px]"
             >
                 <div
-                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default lg:col-span-2"
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default md:col-span-2 2xl:col-span-1"
                 >
-                    <h3 class="text-xl font-semibold mb-4">Concept</h3>
-                    <p class="text-text-muted">Card content goes here</p>
+                    <h3 class="text-xl uppercase mb-4">Business Concept</h3>
+                    <h4 class="text-lg font-semibold mb-2">Problem</h4>
+                    <p class="text-text-muted text-base font-serif">
+                        People have multiple wish lists across different
+                        platforms and struggle to keep them organized, often
+                        forgetting where they saved what or for which occasion.
+                    </p>
+                    <p class="text-text-muted font-serif">
+                        Gift-giving is often inefficient and leads to duplicated
+                        or undesirable gifts because friends and loved ones
+                        don’t have visibility into others’ preferences.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Solution</h4>
+                    <p class="text-text-muted font-serif">
+                        Build a digital platform that helps users keep their
+                        wish lists in one place and makes it easy to share them
+                        with friends and loved ones.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Main features
+                    </h4>
+
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                    >
+                        <li
+                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Users create faves - desired items - by pasting urls
+                            from any webshop or add them manually by taking pictures
+                            in stores.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Users can group faves into collections.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Users can share their faves or collections with friends
+                            and loved ones.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Users can search through their friends faves and collections
+                            that were shared with them to find the perfect gift for
+                            the perfect occasion.
+                        </li>
+                    </ul>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Relevant Links
+                    </h4>
+                    <div class="flex gap-2">
+                        <a
+                            href="https://faveitapp.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <WebsiteIcon size={18} />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/faveitapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <Insta size={18} />
+                        </a>
+                        <a
+                            href="https://x.com/faveitapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <XIcon size={18} />
+                        </a>
+                    </div>
                 </div>
                 <div
                     class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
                 >
-                    <h3 class="text-xl font-semibold mb-4">Figma designs</h3>
-                    <p class="text-text-muted">Card content goes here</p>
+                    <h3 class="text-xl uppercase mb-4">Figma designs</h3>
+                    <div class="columns-2 gap-4">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_components.src}
+                                alt="FaveIT Home Screen"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_screens_1.src}
+                                alt="FaveIT Fave Details"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_screens_2.src}
+                                alt="FaveIT Collection View"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                    </div>
                 </div>
                 <div
                     class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
                 >
-                    <h3 class="text-xl font-semibold mb-4">Card 3</h3>
-                    <p class="text-text-muted">Card content goes here</p>
+                    <h3 class="text-xl uppercase mb-4">APP Architecture</h3>
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                    >
+                        <li
+                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            React Native with Expo for the frontend.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Atomic design for the components.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            State management with Redux Toolkit and Redux Saga for
+                            handling async operations and side effects.
+                        </li>
+                        <li
+                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        >
+                            <div class="hidden md:block">
+                                <CheckIcon
+                                    size={16}
+                                    color="var(--accent-color)"
+                                />
+                            </div>
+                            Supabase for the backend - authentication and data storage.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -77,6 +270,16 @@ import profile_img from '@assets/profile.jpg'
     main {
         margin: auto;
         gap: 0px;
+        animation: fadeIn 500ms ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     .scrollbar-style {

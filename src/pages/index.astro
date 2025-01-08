@@ -10,7 +10,7 @@ import profile_img from '@assets/profile.jpg'
     imagePath={profile_img.src}
 >
     <main
-        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
+        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px] opacity-0 transition-opacity duration-500"
     >
         <div class="w-full h-svh xl:h-auto xl:w-[60%] relative">
             <div class="spinner"><div class="loader"></div></div>
@@ -33,6 +33,16 @@ import profile_img from '@assets/profile.jpg'
     main {
         margin: auto;
         gap: 0px;
+        animation: fadeIn 500ms ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     .scrollbar-style {

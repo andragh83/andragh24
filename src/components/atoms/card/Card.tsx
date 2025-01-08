@@ -86,7 +86,7 @@ const Card = ({ card }: Props) => {
 
                         {card.url_text && card.url ? (
                             <a
-                                className={`px-4 py-3 rounded-full bg-btn-bg text-bg-color-default w-auto text-[14px] leading-[14px] text-center mt-4 hover:bg-text-default md:w-fit uppercase`}
+                                className={`px-4 py-3 rounded-full bg-btn-bg text-bg-color-default w-auto text-[14px] leading-[14px] text-center mt-4 hover:bg-text-default md:w-fit uppercase mb-1`}
                                 href={card.url}
                                 target={
                                     card.url_external ? '_blank' : undefined

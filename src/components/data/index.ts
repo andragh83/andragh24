@@ -17,7 +17,7 @@ export type ICardIcon =
     | 'email templates'
     | 'figma'
     | 'faveit'
-
+    | 'check'
 export type ICard = {
     type: ICardType
     style: 'outlined' | 'full-color'
@@ -114,7 +114,7 @@ export const data: { [key: string]: ICard } = {
     work_card_personal_projects_faveit: {
         type: 'leters_icon_and_text',
         style: 'full-color',
-        title: 'Personal Projects',
+        title: 'Personal Project',
         // description:
         //     "In my free time I enjoy trying new tech and bringing my crazy apps ideas to life.",
         icon_letter_1: 'F',
@@ -127,7 +127,7 @@ export const data: { [key: string]: ICard } = {
     work_card_personal_projects_mealoo: {
         type: 'leters_icon_and_text',
         style: 'full-color',
-        title: 'Personal Projects',
+        title: 'Hackathon Project',
         icon_letter_1: 'M',
         sub_title: 'MeaLoo',
         text: 'An AI-powered weekly meal planner built during a hackathon.',
