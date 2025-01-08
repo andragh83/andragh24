@@ -1,7 +1,7 @@
 ---
 import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
-import ContentManager from '@components/organisms/ContentManager'
+
 import profile_img from '@assets/profile.jpg'
 ---
 
@@ -9,22 +9,66 @@ import profile_img from '@assets/profile.jpg'
     title="Andra Ghitulescu - Frontend Software Engineer"
     imagePath={profile_img.src}
 >
-    <main
-        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
-    >
-        <div class="w-full h-svh xl:h-auto xl:w-[60%] relative">
-            <div class="spinner"><div class="loader"></div></div>
-            <HeroImage client:only />
-        </div>
-        <div
-            class="w-full xl:w-[40%] overflow-x-hidden xl:overflow-y-auto scrollbar-style"
-            id="scrollable"
-        >
+    <main class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh">
+        <div class="flex flex-col w-full gap-8">
             <div
-                class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
+                class="flex items-center justify-between border-b border-border-muted py-6 px-[24px] 2xl:px-[40px]"
             >
+                <a
+                    href="/"
+                    class="flex items-center gap-2 text-default hover:text-accent-color transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-text-default"
+                    >
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span class="text-text-default">Go Back</span>
+                </a>
+                <h1
+                    class="text-3xl font-bold text-text-default absolute left-1/2 -translate-x-1/2"
+                >
+                    FaveIT
+                </h1>
+                <div class="w-[102px]"></div>
             </div>
-            <ContentManager client:load />
+
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-[24px] 2xl:px-[40px]"
+            >
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default lg:col-span-2"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Concept</h3>
+                    <p class="text-text-muted">Card content goes here</p>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Figma designs</h3>
+                    <p class="text-text-muted">Card content goes here</p>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl font-semibold mb-4">Card 3</h3>
+                    <p class="text-text-muted">Card content goes here</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
+        >
         </div>
     </main>
 </Layout>

@@ -19,7 +19,7 @@
     animation: bounce 1s ease-in-out infinite;
     bottom: 16px;
     transform: translate(-50%, 0);
-    color: #fff;
+    color: var(--text-default, #fafafa);
     content: '╲╱';
     font-size: 1rem;
     height: 4rem;

@@ -1,7 +1,7 @@
 ---
 import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
-import ContentManager from '@components/organisms/ContentManager'
+
 import profile_img from '@assets/profile.jpg'
 ---
 
@@ -12,19 +12,9 @@ import profile_img from '@assets/profile.jpg'
     <main
         class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
     >
-        <div class="w-full h-svh xl:h-auto xl:w-[60%] relative">
-            <div class="spinner"><div class="loader"></div></div>
-            <HeroImage client:only />
-        </div>
         <div
-            class="w-full xl:w-[40%] overflow-x-hidden xl:overflow-y-auto scrollbar-style"
-            id="scrollable"
+            class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
         >
-            <div
-                class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
-            >
-            </div>
-            <ContentManager client:load />
         </div>
     </main>
 </Layout>
