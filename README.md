@@ -1,8 +1,8 @@
+## 🚀 Personal Portfolio Website built with Astro
 
+See it live at https://andragh.co.uk
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Structure:
 
 ```text
 /
@@ -15,6 +15,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
+│       └── faveit.astro
+│       └── mealoo.astro
 └── package.json
 ```
-

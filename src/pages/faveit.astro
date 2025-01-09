@@ -1,0 +1,306 @@
+---
+import Layout from '../layouts/Layout.astro'
+import profile_img from '@assets/profile.jpg'
+import PageHeader from '@components/molecules/PageHeader.astro'
+import FeatureListItem from '@components/molecules/FeatureListItem.astro'
+import faveit_components from '@assets/faveIT_figma_designs_components.png'
+import faveit_screens_1 from '@assets/faveIT_figma_designs_screens_1.png'
+import faveit_screens_2 from '@assets/faveIT_figma_designs_screens_2.png'
+import WebsiteIcon from '@components/atoms/icons/website'
+import Insta from '@components/atoms/icons/insta'
+import XIcon from '@components/atoms/icons/x'
+---
+
+<Layout
+    title="Andra Ghitulescu - Frontend Software Engineer"
+    imagePath={profile_img.src}
+>
+    <main
+        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh pb-10 md:pb-4 opacity-0 transition-opacity duration-500"
+    >
+        <div class="flex flex-col w-full gap-8">
+            <PageHeader title="FaveIT" />
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6 px-[24px] 2xl:px-[40px] pb-10"
+            >
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default md:col-span-2 2xl:col-span-1"
+                >
+                    <h3 class="text-xl uppercase mb-4">Business Concept</h3>
+                    <h4 class="text-lg font-semibold mb-2">Problem</h4>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
+                        People have multiple wish lists across different
+                        platforms and struggle to keep them organized, often
+                        forgetting where they saved what or for which occasion.
+                    </p>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal mt-2"
+                    >
+                        Gift-giving is often inefficient and leads to duplicated
+                        or undesirable gifts because friends and loved ones
+                        don’t have visibility into others’ preferences.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Solution</h4>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
+                        Build a digital platform that helps users keep their
+                        wish lists in one place and makes it easy to share them
+                        with friends and loved ones.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Main features
+                    </h4>
+
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-2"
+                    >
+                        <FeatureListItem
+                            text="Users create faves - desired items - by pasting urls from any webshop or add them manually by taking pictures in stores"
+                        />
+                        <FeatureListItem
+                            text="Users can group faves into collections"
+                        />
+                        <FeatureListItem
+                            text="Users can share their faves or collections with friends and loved ones"
+                        />
+                        <FeatureListItem
+                            text="Users can search through their friends faves and collections that were shared with them to find the perfect gift for the perfect occasion"
+                        />
+                    </ul>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Relevant Links
+                    </h4>
+                    <div class="flex gap-2">
+                        <a
+                            href="https://faveitapp.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <WebsiteIcon size={18} />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/faveitapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <Insta size={18} />
+                        </a>
+                        <a
+                            href="https://x.com/faveitapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <XIcon size={18} />
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl uppercase mb-4">Figma designs</h3>
+                    <div class="columns-2 gap-4">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_components.src}
+                                alt="FaveIT Home Screen"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_screens_1.src}
+                                alt="FaveIT Fave Details"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={faveit_screens_2.src}
+                                alt="FaveIT Collection View"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl uppercase mb-4">Architecture</h3>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Current</h4>
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                    >
+                        <FeatureListItem
+                            text="React Native with Expo for the frontend"
+                        />
+                        <FeatureListItem
+                            text="Atomic design for the components"
+                        />
+                        <FeatureListItem
+                            text="State management with Redux Toolkit and Redux Saga"
+                        />
+                        <FeatureListItem
+                            text="Supabase for the backend - authentication and data storage"
+                        />
+                        <h4
+                            class="text-lg font-semibold mb-2 mt-4 text-text-default"
+                        >
+                            Planned
+                        </h4>
+                        <ul
+                            class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                        >
+                            <FeatureListItem
+                                text="Build equivalent web app so users are not restricted to iOS and Android stores"
+                            />
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
+        >
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        gap: 0px;
+        animation: fadeIn 500ms ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .scrollbar-style {
+    }
+    .scrollbar-style::-webkit-scrollbar-thumb {
+        background: var(--scroll-bar-thumb, #343434);
+        border-radius: 10px;
+    }
+    .scrollbar-style::-webkit-scrollbar {
+        width: 4px;
+        background-color: var(--scroll-bar-bg, #1f1f1f);
+    }
+    .spinner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--scroll-bar-bg, #1f1f1f);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 200ms;
+    }
+
+    /* loader curtesy of https://cssloaders.github.io/ */
+
+    .loader {
+        color: var(--loader-color, #ececec);
+        font-size: 45px;
+        text-indent: -9999em;
+        overflow: hidden;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        position: relative;
+        transform: translateZ(0);
+        animation:
+            mltShdSpin 1.7s infinite ease,
+            round 1.7s infinite ease;
+    }
+
+    @keyframes mltShdSpin {
+        0% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                0 -0.83em 0 -0.42em,
+                0 -0.83em 0 -0.44em,
+                0 -0.83em 0 -0.46em,
+                0 -0.83em 0 -0.477em;
+        }
+        5%,
+        95% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                0 -0.83em 0 -0.42em,
+                0 -0.83em 0 -0.44em,
+                0 -0.83em 0 -0.46em,
+                0 -0.83em 0 -0.477em;
+        }
+        10%,
+        59% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                -0.087em -0.825em 0 -0.42em,
+                -0.173em -0.812em 0 -0.44em,
+                -0.256em -0.789em 0 -0.46em,
+                -0.297em -0.775em 0 -0.477em;
+        }
+        20% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                -0.338em -0.758em 0 -0.42em,
+                -0.555em -0.617em 0 -0.44em,
+                -0.671em -0.488em 0 -0.46em,
+                -0.749em -0.34em 0 -0.477em;
+        }
+        38% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                -0.377em -0.74em 0 -0.42em,
+                -0.645em -0.522em 0 -0.44em,
+                -0.775em -0.297em 0 -0.46em,
+                -0.82em -0.09em 0 -0.477em;
+        }
+        100% {
+            box-shadow:
+                0 -0.83em 0 -0.4em,
+                0 -0.83em 0 -0.42em,
+                0 -0.83em 0 -0.44em,
+                0 -0.83em 0 -0.46em,
+                0 -0.83em 0 -0.477em;
+        }
+    }
+
+    @keyframes round {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>

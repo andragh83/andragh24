@@ -9,24 +9,25 @@ interface Props {
 const Switch = ({ activeTab, onClick }: Props) => {
     return (
         <button
-            className={`${styles.insetShadow} relative w-full rounded-full border-0 bg-[#333333] px-[8px] py-[6px] flex items-center h-[64px]`}
+            className={`${styles.insetShadow} relative w-full rounded-full border-0 bg-switch-bg px-[8px] py-[6px] flex items-center h-[64px]`}
             onClick={onClick}
         >
             <div
-                className={`${styles.absoluteBtn} absolute h-[48px] rounded-full bg-[#181818] z-0`}
+                className={`${styles.absoluteBtn} absolute h-[48px] rounded-full bg-bg-color-default z-0`}
                 style={{
                     transition: 'all 200ms',
                     transform:
-                        activeTab === 'skills'
+                        activeTab === 'work'
                             ? 'translateX(0)'
                             : 'translateX(calc(100%))',
                 }}
             />
             <div className={`${styles.btnTxt}`}>
-                <SkillsIcon size={15} color="#afafaf" /> Skills
+                <WorkIcon size={16} color="var(--icon-color, #afafaf)" /> Work
             </div>
             <div className={`${styles.btnTxt}`}>
-                <WorkIcon size={16} color="#afafaf" /> Work
+                <SkillsIcon size={15} color="var(--icon-color, #afafaf)" />
+                Skills
             </div>
         </button>
     )

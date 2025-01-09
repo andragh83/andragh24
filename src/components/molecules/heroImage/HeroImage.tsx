@@ -59,7 +59,7 @@ export default function HeroImage() {
 
     let bottomContentPlacement =
         scaleImgWithContent === 'story'
-            ? windowDimensions && windowDimensions?.height - 700
+            ? windowDimensions && windowDimensions?.height - 580
             : scaleImgWithContent === 'contact'
               ? windowDimensions && windowDimensions.height / 2 - 160
               : undefined
@@ -163,7 +163,7 @@ export default function HeroImage() {
             <div
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
                 style={{
-                    background: 'linear-gradient(#181818a2, #181818)',
+                    background: 'var(--bg-image-default)',
                     transition: 'all 300ms',
                     opacity: scaleImgWithContent ? 1 : 0,
                     height:
@@ -174,8 +174,7 @@ export default function HeroImage() {
             <div
                 className={`absolute z-1 top-0 bottom-0 left-0 right-0 w-full h-full`}
                 style={{
-                    background:
-                        'linear-gradient(#18181847, #1818186d, #181818ce, #181818)',
+                    background: 'var(--bg-image-default)',
                     transition: 'all 300ms',
                     opacity: scaleImgWithContent ? 0 : 1,
                 }}
@@ -206,7 +205,7 @@ export default function HeroImage() {
                 ) : null}
                 <h1
                     className="w-full xl:w-auto text-[40px] leading-[56px]
-                             text-white xl:text-[80px] xl:leading-[96px] tracking-wide"
+                             text-text-default xl:text-[80px] xl:leading-[96px] tracking-wide"
                     style={{
                         position: 'absolute',
                         bottom: bottomTitlePlacement,
@@ -226,7 +225,7 @@ export default function HeroImage() {
                     ANDRA <br /> GHITULESCU
                 </h1>
                 <div
-                    className="px-[24px] xl:px-0"
+                    className="px-[24px] xl:pl-0 xl:pr-10"
                     style={{
                         position: 'absolute',
                         bottom: isMobile ? undefined : bottomContentPlacement,
@@ -251,7 +250,7 @@ export default function HeroImage() {
                 >
                     {scaleImgWithContent === 'contact' ? (
                         <div className="w-full flex flex-col pt-8 xl:pt-0 gap-4 sm:gap-8 items-center justify-center">
-                            <p className="text-white uppercase text-[16px] xl:text-[24px] font-light">
+                            <p className="text-text-default uppercase text-[16px] xl:text-[24px] font-light">
                                 find me on
                             </p>
                             <div className="w-full flex gap-4 items-center justify-center">
@@ -299,11 +298,11 @@ export default function HeroImage() {
                         </div>
                     ) : null}
                     {scaleImgWithContent === 'story' ? (
-                        <div className="w-full h-full flex flex-col gap-8 pb-[80px]">
+                        <div className="w-full h-full flex flex-col gap-4 pb-[80px] max-w-[1000px]">
                             {story.map((p, i) => (
                                 <p
                                     key={`story_${i}`}
-                                    className="text-white text-[24px] font-serif 
+                                    className="text-text-default text-[14px] lg:text-[16px] font-serif 
                                                 font-light max-w-[1400px]"
                                 >
                                     {p}
@@ -334,7 +333,7 @@ export default function HeroImage() {
                             onClick={() => {
                                 onBtnClick('story')
                             }}
-                            className={`${styles.btnTxt} rounded-full bg-white text-off-black 
+                            className={`${styles.btnTxt} rounded-full bg-btn-bg text-off-black hover:bg-text-default
                                         py-[13px] px-[24px] xl:py-[12px] xl:px-[24px] uppercase text-[16px] leading-[16px] xl:text-[18px] xl:leading-[18px]`}
                         >
                             My story
@@ -343,8 +342,8 @@ export default function HeroImage() {
                             onClick={() => {
                                 onBtnClick('contact')
                             }}
-                            className={`${styles.btnTxt} rounded-full bg-off-text text-white 
-                                        py-[13px] px-[24px] xl:py-[12px] xl:px-[24px] uppercase text-[16px] leading-[16px] xl:text-[18px] xl:leading-[18px] border-white border`}
+                            className={`${styles.btnTxt} rounded-full  text-text-default 
+                                        py-[13px] px-[24px] xl:py-[12px] xl:px-[24px] uppercase text-[16px] leading-[16px] xl:text-[18px] xl:leading-[18px] border-text-default border`}
                         >
                             Let's chat
                         </button>

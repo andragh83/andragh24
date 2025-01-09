@@ -1,11 +1,12 @@
 import Switch from '@components/atoms/buttons/switch/switch'
-import Skills from '@components/molecules/Skills'
-import Work from '@components/molecules/Work'
+
 import { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
+import Skills from '@components/molecules/skills'
+import Work from '@components/molecules/work'
 
 const ContentManager = () => {
-    const [activeTab, setActiveTab] = useState<'skills' | 'work'>('skills')
+    const [activeTab, setActiveTab] = useState<'work' | 'skills'>('work')
     const [scrollableDiv, setScrollableDiv] = useState<any>(null)
     const [isFixed, setIsFixed] = useState<any>(null)
 
@@ -76,16 +77,16 @@ const ContentManager = () => {
                 style={{
                     transition: 'all 200ms',
                     transform:
-                        activeTab === 'skills'
+                        activeTab === 'work'
                             ? 'translateX(0px)'
                             : 'translateX(calc(-50% - 12px))',
                 }}
             >
                 <div role="list" className="flex-1">
-                    <Skills />
+                    <Work />
                 </div>
                 <div role="list" className="flex-1">
-                    <Work />
+                    <Skills />
                 </div>
             </div>
         </div>

@@ -8,7 +8,6 @@ import SupabaseIcon from './supabase'
 import EmailIcon from './email'
 import FigmaIcon from './figma'
 import FaveitIcon from './faveit'
-
 export default function CardIcon({
     icon,
     size,

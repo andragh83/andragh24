@@ -6,7 +6,7 @@ interface Props {
 
 const { title, imagePath } = Astro.props
 import '@fontsource-variable/urbanist'
-import '@fontsource-variable/eb-garamond'
+import '@fontsource/merriweather'
 ---
 
 <!doctype html>
@@ -118,25 +118,70 @@ import '@fontsource-variable/eb-garamond'
 </html>
 <style is:global>
     :root {
-        --accent: 255, 204, 195;
-        --accent-light: 255, 226, 221;
-        --accent-dark: 49, 10, 101;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            rgb(var(--accent-light)) 30%,
-            white 60%
-        );
+        --bg-color-default: #181818;
+        --bg-color-muted: #343434;
+        --text-default: #fafafa;
+        --text-muted: #c5c5c5;
+        --btn-bg: #e5e5e5;
         --card-bg: #282828;
+        --card-bg-lighter: #3a3a3a;
+        --border-muted: #4b4b4b;
+        --border-default: #616161;
+        --switch-bg: #333333;
+        --icon-color: #afafaf;
+        --icon-color-muted: #c2c2c2;
+        --bg-image-default: linear-gradient(#181818a2, #181818);
+        --bg-image-granular: linear-gradient(#181818, #181818, #18181800);
+        --bg-image-granular-dark: linear-gradient(
+            #18181847,
+            #1818186d,
+            #181818ce,
+            #181818
+        );
+        --scroll-bar-bg: #1f1f1f;
+        --scroll-bar-thumb: #343434;
+        --loader-color: #ececec;
+        --inset-shadow-color: #3b3b3b;
+        --shadow-color: rgba(255, 255, 255, 0.1);
+        --shimmer-color: rgba(60, 60, 60, 0.7);
+        --accent-color: #d5206f;
+        --accent-color-hover: #d5206f80;
+        --accent-color-active: #d5206f40;
     }
     html {
         font-family: 'Urbanist', sans-serif;
-        background: #181818;
+        background: var(--bg-color-default, #181818);
+    }
+
+    .html.light {
+        --bg-color-default: #181818;
+        --bg-color-muted: #343434;
+        --text-default: #fafafa;
+        --card-bg: #282828;
+        --card-bg-lighter: #3a3a3a;
+        --border-muted: #4b4b4b;
+        --border-default: #616161;
+        --switch-bg: #333333;
+        --icon-color: #afafaf;
+        --icon-color-muted: #c2c2c2;
+        --bg-image-default: linear-gradient(#181818a2, #181818);
+        --bg-image-granular: linear-gradient(#181818, #181818, #18181800);
+        --bg-image-granular-dark: linear-gradient(
+            #18181847,
+            #1818186d,
+            #181818ce,
+            #181818
+        );
+        --scroll-bar-bg: #1f1f1f;
+        --scroll-bar-thumb: #343434;
+        --loader-color: #ececec;
+        --inset-shadow-color: #3b3b3b;
+        --shadow-color: rgba(255, 255, 255, 0.1);
+        --shimmer-color: rgba(60, 60, 60, 0.7);
     }
 
     code {
         font-family:
-            'EB Garamond Variable',
             'Urbanist',
             Menlo,
             Monaco,

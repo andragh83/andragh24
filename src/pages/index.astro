@@ -1,7 +1,7 @@
 ---
 import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
-import ContentManager from '@components/organisms/ContentManager'
+import ContentManager from '@components/organisms/contentManager'
 import profile_img from '@assets/profile.jpg'
 ---
 
@@ -10,7 +10,7 @@ import profile_img from '@assets/profile.jpg'
     imagePath={profile_img.src}
 >
     <main
-        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
+        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px] opacity-0 transition-opacity duration-500"
     >
         <div class="w-full h-svh xl:h-auto xl:w-[60%] relative">
             <div class="spinner"><div class="loader"></div></div>
@@ -20,6 +20,10 @@ import profile_img from '@assets/profile.jpg'
             class="w-full xl:w-[40%] overflow-x-hidden xl:overflow-y-auto scrollbar-style"
             id="scrollable"
         >
+            <div
+                class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
+            >
+            </div>
             <ContentManager client:load />
         </div>
     </main>
@@ -29,17 +33,27 @@ import profile_img from '@assets/profile.jpg'
     main {
         margin: auto;
         gap: 0px;
+        animation: fadeIn 500ms ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     .scrollbar-style {
     }
     .scrollbar-style::-webkit-scrollbar-thumb {
-        background: #343434;
+        background: var(--scroll-bar-thumb, #343434);
         border-radius: 10px;
     }
     .scrollbar-style::-webkit-scrollbar {
         width: 4px;
-        background-color: #1f1f1f; /* or add it to the track */
+        background-color: var(--scroll-bar-bg, #1f1f1f);
     }
     .spinner {
         position: absolute;
@@ -47,7 +61,7 @@ import profile_img from '@assets/profile.jpg'
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #1f1f1f;
+        background-color: var(--scroll-bar-bg, #1f1f1f);
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -58,7 +72,7 @@ import profile_img from '@assets/profile.jpg'
     /* loader curtesy of https://cssloaders.github.io/ */
 
     .loader {
-        color: #ececec;
+        color: var(--loader-color, #ececec);
         font-size: 45px;
         text-indent: -9999em;
         overflow: hidden;

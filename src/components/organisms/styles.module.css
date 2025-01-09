@@ -34,7 +34,7 @@
     padding-right: 56px;
     padding-bottom: 32px;
     padding-top: 16px;
-    background: linear-gradient(#181818, #181818, #18181800);
+    background: var(--bg-image-granular);
 }
 
 @media (max-width: 1536px) {

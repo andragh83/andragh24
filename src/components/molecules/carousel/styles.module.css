@@ -8,7 +8,7 @@
         to right,
         rgba(255, 255, 255, 0) 0%,
         rgba(255, 255, 255, 0) 40%,
-        rgba(60, 60, 60, 0.7) 60%,
+        var(--shimmer-color, rgba(60, 60, 60, 0.7)) 60%,
         rgba(255, 255, 255, 0) 100%
     );
     animation: shimmer 2s infinite;

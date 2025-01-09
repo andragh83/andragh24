@@ -17,19 +17,24 @@ export type ICardIcon =
     | 'email templates'
     | 'figma'
     | 'faveit'
-
+    | 'check'
 export type ICard = {
     type: ICardType
     style: 'outlined' | 'full-color'
     icon_letter_1?: string
     icon_letter_2?: string
+    hide_left_letter_on_mobile?: boolean
+    title?: string
+    sub_title?: string
     text?: string
     text_2?: string
     text_3?: string
+    url_text?: string
     cards_list?: ICardIcon[][]
     text_list?: string[]
-    icon?: ICardIcon
+    url_icon?: ICardIcon
     url?: string
+    url_external?: boolean
 }
 
 export const data: { [key: string]: ICard } = {
@@ -61,7 +66,7 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'B',
         icon_letter_2: 'e',
-        text: 'I have very limited knowledge of backend tech and a bit of Postgress databases and so I find it very convenient to use Supabase for my personal projects.',
+        text: 'I have limited knowledge of backend tech and a bit of Postgress databases and so I find it very convenient to use Supabase for my personal projects.',
     },
     skills_card_supabase: {
         type: 'icon_and_text',
@@ -96,42 +101,49 @@ export const data: { [key: string]: ICard } = {
         type: 'leters_icon_and_text',
         style: 'outlined',
         icon_letter_1: 'C',
-        text: 'I’m part of CUSTODIAN, a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars.',
-        text_2: 'We’re a small team of passionate people, shipping at a fast pace without compromising on quality.',
-        text_3: 'Check out Custodian.',
-        url: 'https://www.custodian.club',
-    },
-    work_card_description: {
-        type: 'leters_icon_and_text_and_list',
-        style: 'full-color',
-        icon_letter_1: 'W',
-        text: 'I’m half of the frontend tech team that builds and maintains:',
+        hide_left_letter_on_mobile: true,
+        title: 'Frontend Engineer @ CUSTODIAN',
+        text: 'CUSTODIAN is a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars. We’re a small team of passionate people, shipping at a fast pace without compromising on quality. I’m half of the frontend tech team that builds and maintains:',
         text_list: [
-            'our main REACT progressive web app (PWA)',
-            'our iOS native app',
-            'two NextJs micro-frontends optimised for SEO',
+            'Main REACT progressive web app (PWA)',
+            'iOS native app available on the AppStore',
+            '2 micro-frontends developed with NextJs and optimised for SEO',
         ],
+        url_text: 'Visit Custodian',
+        url: 'https://www.custodian.club',
+        url_external: true,
     },
-    work_card_freetime: {
-        type: 'leters_icon_and_text',
-        style: 'outlined',
-        icon_letter_1: 'P',
-        text: 'In my free time I enjoy trying new tech and bringing my crazy apps ideas to life. Currently I am working on a side project I’ve been thinking of ever since I’ve started to learn how to code. ',
-    },
-    work_card_faveit: {
+    work_card_personal_projects_faveit: {
         type: 'leters_icon_and_text',
         style: 'full-color',
+        title: 'Personal Project',
+        hide_left_letter_on_mobile: true,
         icon_letter_1: 'F',
-        text: 'FaveIT is an app that enables its users to curate desired gifts and share them with whoever they choose. It is built with React Native on top of SUPABASE.',
-        text_2: 'Find out more about FaveIT',
-        url: 'https://www.faveitapp.com/',
+        sub_title: 'FaveIT',
+        text: 'FaveIT is an app that enables its users to curate desired gifts and share them with whoever they choose. From concept, to Figma designs and implementation, I built it from scratch with React Native on top of Supabase.',
+        text_2: 'Technologies: React Native, Redux, Redux-Saga for state management and Supabase for the database.',
+        url_text: 'More on FaveIT',
+        url: '/faveit',
     },
-    work_card_faveit_icon: {
-        type: 'icon',
+    work_card_personal_projects_mealoo: {
+        type: 'leters_icon_and_text',
         style: 'full-color',
-        icon: 'faveit',
-        url: 'https://www.faveitapp.com/',
+        title: 'Hackathon Project',
+        icon_letter_1: 'M',
+        hide_left_letter_on_mobile: true,
+        sub_title: 'MeaLoo',
+        text: 'An AI-powered weekly meal planner built during a hackathon.',
+        text_2: 'Technologies: Xata and Prisma for databases, Clerk for authentication, and Inngest for background tasks.',
+        url_text: 'More on MeaLoo',
+        url: '/mealoo',
     },
+
+    // work_card_faveit_icon: {
+    //     type: 'icon',
+    //     style: 'full-color',
+    //     url_icon: 'faveit',
+    //     url: 'https://www.faveitapp.com/',
+    // },
 }
 
 export const skills_cards_list = [
@@ -148,10 +160,8 @@ export const skills_cards_list = [
 
 export const work_cards_list = [
     'work_card_general',
-    'work_card_description',
-    'work_card_freetime',
-    'work_card_faveit',
-    'work_card_faveit_icon',
+    'work_card_personal_projects_faveit',
+    'work_card_personal_projects_mealoo',
 ]
 
 export const story = [
