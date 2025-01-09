@@ -6,10 +6,10 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Urbanist', ...defaultTheme.fontFamily.sans],
-                serif: [
-                    'EB Garamond Variable',
-                    ...defaultTheme.fontFamily.serif,
-                ],
+                serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
+            },
+            fontSize: {
+                'serif-base': ['14px', '22px'],
             },
             colors: {
                 'off-black': 'var(--bg-color-muted, #343434)',

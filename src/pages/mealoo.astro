@@ -1,8 +1,14 @@
 ---
-import HeroImage from '@components/molecules/heroImage/HeroImage'
 import Layout from '../layouts/Layout.astro'
-
 import profile_img from '@assets/profile.jpg'
+import PageHeader from '@components/molecules/PageHeader.astro'
+import FeatureListItem from '@components/molecules/FeatureListItem.astro'
+import mealoo_components from '@assets/mealoo_figma_designs_components.png'
+import mealoo_welcome_screen from '@assets/mealoo_figma_designs_welcome_screen.png'
+import mealoo_meal_creation from '@assets/mealoo_figma_designs_meal_creations.png'
+import mealoo_dashboard from '@assets/mealoo_figma_designs_dashboard.png'
+import WebsiteIcon from '@components/atoms/icons/website'
+import GithubIcon from '@components/atoms/icons/github'
 ---
 
 <Layout
@@ -10,8 +16,184 @@ import profile_img from '@assets/profile.jpg'
     imagePath={profile_img.src}
 >
     <main
-        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh xl:p-[24px] 2xl:p-[40px]"
+        class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh pb-10 md:pb-4 opacity-0 transition-opacity duration-500"
     >
+        <div class="flex flex-col w-full gap-8">
+            <PageHeader title="MeaLoo" />
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6 px-[24px] 2xl:px-[40px]"
+            >
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default md:col-span-2 2xl:col-span-1"
+                >
+                    <h3 class="text-xl uppercase mb-4">Idea</h3>
+                    <h4 class="text-lg font-semibold mb-2">Description</h4>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
+                        Weekly meal planner app that allows users to plan their
+                        meals for the week with the help of AI. When generating
+                        meals, users write a message where they can mention the
+                        type of cuisine, caloeries, the number of people and
+                        prefered ingredients or ingredients they have at home.
+                        The AI will generate a meal plan for the selected day
+                        based on the user's preferences.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">User flow</h4>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
+                        After logging in, the user is given the choice to
+                        navigate to create a plan or to view all his meal plans.
+                    </p>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal mt-2"
+                    >
+                        To create a plan user adds a description of what he
+                        would like to eat on a selected weekday, and sends it to
+                        AI which generates a day meal plan. The user can then
+                        save it into the weekly meal plan. To complete the
+                        weekly meal plan, the user repeats this process for
+                        every day of the week.
+                    </p>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal mt-2"
+                    >
+                        After completing a weekly meal plan, this can be
+                        assigned to a specific week. Only complete plans can be
+                        assigned.
+                    </p>
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal mt-2"
+                    >
+                        When assigning a plan to a week, an Inngest function
+                        checks if it has a shopping list, and if not, it asks AI
+                        to generate one under the hood and then saves it for the
+                        user. The shopping list is then viewable on the
+                        dashboard for the plans assigned to the current week
+                    </p>
+
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Relevant Links
+                    </h4>
+                    <div class="flex gap-2">
+                        <a
+                            href="https://mealoo.vercel.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <WebsiteIcon size={18} />
+                        </a>
+                        <a
+                            href="https://github.com/andragh83/mealoo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="w-9 h-9 flex items-center justify-center rounded bg-bg-color-default hover:text-accent-color transition-colors"
+                        >
+                            <GithubIcon size={24} />
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl uppercase mb-4">Figma designs</h3>
+                    <div class="columns-2 gap-4">
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={mealoo_components.src}
+                                alt="Mealoo Components"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={mealoo_welcome_screen.src}
+                                alt="Mealoo Welcome Screen"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={mealoo_meal_creation.src}
+                                alt="Mealoo Meal Creation"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-black/20 rounded-md"
+                            >
+                            </div>
+                            <img
+                                src={mealoo_dashboard.src}
+                                alt="Mealoo Dashboard"
+                                class="w-full h-auto rounded-md object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
+                >
+                    <h3 class="text-xl uppercase mb-4">Development</h3>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Duration</h4>
+                    <p class="text-text-muted text-base font-serif">
+                        I built the web app during 4 days, after my working
+                        hours.
+                    </p>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">App pages</h4>
+
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                    >
+                        <FeatureListItem
+                            text="Dashboard where users can easily access the meal plan assigned to the current week"
+                        />
+                        <FeatureListItem
+                            text="Creation page where users can create weekly meal plans"
+                        />
+                        <FeatureListItem
+                            text="Weekly plans page where users can view and manage all their plans"
+                        />
+                    </ul>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">
+                        Architecture
+                    </h4>
+                    <ul
+                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                    >
+                        <FeatureListItem
+                            text="Clerk for users' authentication"
+                        />
+                        <FeatureListItem
+                            text="Xata for storing and managing the database"
+                        />
+                        <FeatureListItem
+                            text="Prisma ORM for writing db queries with ease"
+                        />
+                        <FeatureListItem
+                            text="Inngest to run in the background and generate shopping lists"
+                        />
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div
             class="fixed bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-1/4 h-1/4 rounded-full bg-accent-color filter blur-[150px] md:blur-[300px]"
         >
@@ -23,6 +205,16 @@ import profile_img from '@assets/profile.jpg'
     main {
         margin: auto;
         gap: 0px;
+        animation: fadeIn 500ms ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 
     .scrollbar-style {

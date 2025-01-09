@@ -1,0 +1,18 @@
+---
+import CheckIcon from '@components/atoms/icons/check'
+
+interface Props {
+    text: string
+}
+
+const { text } = Astro.props
+---
+
+<li
+    class="text-text-muted text-serif-base font-normal list-none p-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+>
+    <div class="hidden md:block">
+        <CheckIcon size={16} color="var(--accent-color)" />
+    </div>
+    {text}
+</li>

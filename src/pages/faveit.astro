@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import profile_img from '@assets/profile.jpg'
-import CheckIcon from '@components/atoms/icons/check'
+import PageHeader from '@components/molecules/PageHeader.astro'
+import FeatureListItem from '@components/molecules/FeatureListItem.astro'
 import faveit_components from '@assets/faveIT_figma_designs_components.png'
 import faveit_screens_1 from '@assets/faveIT_figma_designs_screens_1.png'
 import faveit_screens_2 from '@assets/faveIT_figma_designs_screens_2.png'
@@ -18,38 +19,7 @@ import XIcon from '@components/atoms/icons/x'
         class="flex gap-8 2xl:gap-12 w-full flex-col xl:flex-row xl:h-dvh pb-10 md:pb-4 opacity-0 transition-opacity duration-500"
     >
         <div class="flex flex-col w-full gap-8">
-            <div
-                class="flex items-center justify-between border-b border-border-muted py-6 px-[24px] 2xl:px-[40px]"
-            >
-                <a
-                    href="/"
-                    class="flex items-center gap-2 text-default hover:text-accent-color transition-colors"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="text-text-default"
-                    >
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                    <span class="text-text-default hidden md:block"
-                        >Go Back</span
-                    >
-                </a>
-                <h1
-                    class="text-xl md:text-3xl font-semibold text-text-default absolute left-1/2 -translate-x-1/2"
-                >
-                    FaveIT
-                </h1>
-                <div class="w-[102px]"></div>
-            </div>
+            <PageHeader title="FaveIT" />
 
             <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6 px-[24px] 2xl:px-[40px]"
@@ -59,18 +29,24 @@ import XIcon from '@components/atoms/icons/x'
                 >
                     <h3 class="text-xl uppercase mb-4">Business Concept</h3>
                     <h4 class="text-lg font-semibold mb-2">Problem</h4>
-                    <p class="text-text-muted text-base font-serif">
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
                         People have multiple wish lists across different
                         platforms and struggle to keep them organized, often
                         forgetting where they saved what or for which occasion.
                     </p>
-                    <p class="text-text-muted font-serif">
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal mt-2"
+                    >
                         Gift-giving is often inefficient and leads to duplicated
                         or undesirable gifts because friends and loved ones
                         don’t have visibility into others’ preferences.
                     </p>
                     <h4 class="text-lg font-semibold mb-2 mt-4">Solution</h4>
-                    <p class="text-text-muted font-serif">
+                    <p
+                        class="text-text-muted text-serif-base font-serif font-normal"
+                    >
                         Build a digital platform that helps users keep their
                         wish lists in one place and makes it easy to share them
                         with friends and loved ones.
@@ -80,57 +56,20 @@ import XIcon from '@components/atoms/icons/x'
                     </h4>
 
                     <ul
-                        class="list-disc list-inside text-text-muted flex flex-col gap-1"
+                        class="list-disc list-inside text-text-muted flex flex-col gap-2"
                     >
-                        <li
-                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Users create faves - desired items - by pasting urls
-                            from any webshop or add them manually by taking pictures
-                            in stores.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Users can group faves into collections.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Users can share their faves or collections with friends
-                            and loved ones.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-3 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Users can search through their friends faves and collections
-                            that were shared with them to find the perfect gift for
-                            the perfect occasion.
-                        </li>
+                        <FeatureListItem
+                            text="Users create faves - desired items - by pasting urls from any webshop or add them manually by taking pictures in stores"
+                        />
+                        <FeatureListItem
+                            text="Users can group faves into collections"
+                        />
+                        <FeatureListItem
+                            text="Users can share their faves or collections with friends and loved ones"
+                        />
+                        <FeatureListItem
+                            text="Users can search through their friends faves and collections that were shared with them to find the perfect gift for the perfect occasion"
+                        />
                     </ul>
                     <h4 class="text-lg font-semibold mb-2 mt-4">
                         Relevant Links
@@ -205,55 +144,35 @@ import XIcon from '@components/atoms/icons/x'
                 <div
                     class="bg-card-bg rounded-lg p-6 hover:shadow-lg transition-shadow text-text-default"
                 >
-                    <h3 class="text-xl uppercase mb-4">APP Architecture</h3>
+                    <h3 class="text-xl uppercase mb-4">Architecture</h3>
+                    <h4 class="text-lg font-semibold mb-2 mt-4">Current</h4>
                     <ul
                         class="list-disc list-inside text-text-muted flex flex-col gap-1"
                     >
-                        <li
-                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                        <FeatureListItem
+                            text="React Native with Expo for the frontend"
+                        />
+                        <FeatureListItem
+                            text="Atomic design for the components"
+                        />
+                        <FeatureListItem
+                            text="State management with Redux Toolkit and Redux Saga"
+                        />
+                        <FeatureListItem
+                            text="Supabase for the backend - authentication and data storage"
+                        />
+                        <h4
+                            class="text-lg font-semibold mb-2 mt-4 text-text-default"
                         >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            React Native with Expo for the frontend.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
+                            Planned
+                        </h4>
+                        <ul
+                            class="list-disc list-inside text-text-muted flex flex-col gap-1"
                         >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Atomic design for the components.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            State management with Redux Toolkit and Redux Saga for
-                            handling async operations and side effects.
-                        </li>
-                        <li
-                            class="text-text-muted font-serif list-none py-2 px-3 rounded-md bg-bg-color-default w-fit flex items-center gap-2"
-                        >
-                            <div class="hidden md:block">
-                                <CheckIcon
-                                    size={16}
-                                    color="var(--accent-color)"
-                                />
-                            </div>
-                            Supabase for the backend - authentication and data storage.
-                        </li>
+                            <FeatureListItem
+                                text="Build equivalent web app so users are not restricted to iOS and Android stores"
+                            />
+                        </ul>
                     </ul>
                 </div>
             </div>

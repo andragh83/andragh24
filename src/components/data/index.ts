@@ -23,6 +23,7 @@ export type ICard = {
     style: 'outlined' | 'full-color'
     icon_letter_1?: string
     icon_letter_2?: string
+    hide_left_letter_on_mobile?: boolean
     title?: string
     sub_title?: string
     text?: string
@@ -100,6 +101,7 @@ export const data: { [key: string]: ICard } = {
         type: 'leters_icon_and_text',
         style: 'outlined',
         icon_letter_1: 'C',
+        hide_left_letter_on_mobile: true,
         title: 'Frontend Engineer @ CUSTODIAN',
         text: 'CUSTODIAN is a brilliant startup on a mission to disrupt the way enthusiasts care for their classic cars. We’re a small team of passionate people, shipping at a fast pace without compromising on quality. I’m half of the frontend tech team that builds and maintains:',
         text_list: [
@@ -115,8 +117,7 @@ export const data: { [key: string]: ICard } = {
         type: 'leters_icon_and_text',
         style: 'full-color',
         title: 'Personal Project',
-        // description:
-        //     "In my free time I enjoy trying new tech and bringing my crazy apps ideas to life.",
+        hide_left_letter_on_mobile: true,
         icon_letter_1: 'F',
         sub_title: 'FaveIT',
         text: 'FaveIT is an app that enables its users to curate desired gifts and share them with whoever they choose. From concept, to Figma designs and implementation, I built it from scratch with React Native on top of Supabase.',
@@ -129,6 +130,7 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         title: 'Hackathon Project',
         icon_letter_1: 'M',
+        hide_left_letter_on_mobile: true,
         sub_title: 'MeaLoo',
         text: 'An AI-powered weekly meal planner built during a hackathon.',
         text_2: 'Technologies: Xata and Prisma for databases, Clerk for authentication, and Inngest for background tasks.',

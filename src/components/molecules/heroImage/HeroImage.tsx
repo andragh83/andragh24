@@ -59,7 +59,7 @@ export default function HeroImage() {
 
     let bottomContentPlacement =
         scaleImgWithContent === 'story'
-            ? windowDimensions && windowDimensions?.height - 700
+            ? windowDimensions && windowDimensions?.height - 580
             : scaleImgWithContent === 'contact'
               ? windowDimensions && windowDimensions.height / 2 - 160
               : undefined
@@ -225,7 +225,7 @@ export default function HeroImage() {
                     ANDRA <br /> GHITULESCU
                 </h1>
                 <div
-                    className="px-[24px] xl:px-0"
+                    className="px-[24px] xl:pl-0 xl:pr-10"
                     style={{
                         position: 'absolute',
                         bottom: isMobile ? undefined : bottomContentPlacement,
@@ -298,11 +298,11 @@ export default function HeroImage() {
                         </div>
                     ) : null}
                     {scaleImgWithContent === 'story' ? (
-                        <div className="w-full h-full flex flex-col gap-8 pb-[80px]">
+                        <div className="w-full h-full flex flex-col gap-4 pb-[80px] max-w-[1000px]">
                             {story.map((p, i) => (
                                 <p
                                     key={`story_${i}`}
-                                    className="text-text-default text-[24px] font-serif 
+                                    className="text-text-default text-[14px] lg:text-[16px] font-serif 
                                                 font-light max-w-[1400px]"
                                 >
                                     {p}

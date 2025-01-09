@@ -12,12 +12,13 @@ const Card = ({ card }: Props) => {
         card.type === 'icon_and_text'
             ? true
             : false
+
     return (
         <li
             className={`${styles.linkCard} ${hasLeftSide ? 'gap-4' : ''} 
                 ${
                     card.style === 'outlined'
-                        ? '!bg-transparent border-[1px] rounded-lg border-border-default'
+                        ? '!bg-transparent border-[1px] rounded-lg border-accent-color-active'
                         : card.type === 'icon'
                           ? 'items-center justify-center'
                           : ''
@@ -26,15 +27,19 @@ const Card = ({ card }: Props) => {
             {card.type === 'icon_and_text' ? (
                 <div className="flex item-center gap-4 p-4 rounded-lg bg-card-bg w-full text-[22px]">
                     <CardIcon icon={card.text as ICardIcon} />
-                    <p className="uppercase font-sans m-0 p-0 leading-0 self-center">
+                    <p className="uppercase font-sans text-base m-0 p-0 leading-0 self-center">
                         {card.text}
                     </p>
                 </div>
             ) : null}
             {card.type === 'leters_icon_and_text' ? (
                 <>
-                    <div className="border-[1px] border-border-default h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight">
-                        <p className="text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-text-default p-0 m-0  uppercase">
+                    <div
+                        className={`border-[1px] border-accent-color h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight ${card.hide_left_letter_on_mobile ? 'hidden sm:flex' : ''}`}
+                    >
+                        <p
+                            className={`text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-text-default p-0 m-0 uppercase`}
+                        >
                             {card.icon_letter_1 ?? null}
                         </p>
                         <p
@@ -75,7 +80,7 @@ const Card = ({ card }: Props) => {
                             <ul className="flex flex-col gap-2">
                                 {card.text_list.map((text, i) => (
                                     <li
-                                        className="px-4 py-2 rounded-lg bg-card-bg text-[14px] md:text-[16px]"
+                                        className="px-4 py-2 rounded-lg bg-card-bg text-[14px] md:text-[16px] text-serif-base"
                                         key={`text_list_item_${i}`}
                                     >
                                         {text}
@@ -100,7 +105,7 @@ const Card = ({ card }: Props) => {
             ) : null}
             {card.type === 'leters_icon_and_text_and_list' ? (
                 <>
-                    <div className="border-[1px] border-border-muted h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px]  px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
+                    <div className="border border-accent-color h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px]  px-[12px] pt-[12px] flex justify-end items-end  tracking-tight">
                         <p className="text-[80px] text-text-default  p-0 m-0 leading-[80px] uppercase">
                             {card.icon_letter_1 ?? null}
                         </p>
@@ -144,12 +149,12 @@ const Card = ({ card }: Props) => {
                             {list.map((item, i) => (
                                 <div
                                     key={`sub_card_list_item_${i}`}
-                                    className={`flex items-center gap-2  ${item === 'typescript' ? 'py-0' : 'border-border-muted border-[1px] px-5'}  rounded-lg py-2`}
+                                    className={`flex items-center gap-2  ${item === 'typescript' ? 'py-0' : 'border-accent-color border-[1px] px-5'}  rounded-lg py-2`}
                                 >
                                     <div
                                         className={
                                             item === 'typescript'
-                                                ? 'border-border-muted border-[1px] px-2 py-3'
+                                                ? 'border border-accent-color px-2 py-3'
                                                 : ''
                                         }
                                     >
