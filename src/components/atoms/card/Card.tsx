@@ -69,7 +69,7 @@ const Card = ({ card }: Props) => {
                         ) : null}
                     </div>
 
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 justify-center">
                         {card.title ? (
                             <p className={`${styles.cardTitle}`}>
                                 {card.title}
