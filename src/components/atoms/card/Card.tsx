@@ -1,6 +1,9 @@
 import type { ICard, ICardIcon } from '@components/data'
 import styles from '../card/styles.module.css'
 import CardIcon from '../icons'
+import FaveitIcon from '../icons/faveit'
+import CustodianLogoIcon from '../icons/custodianLogo'
+import MealooLogoIcon from '../icons/mealooLogo'
 interface Props {
     card: ICard
 }
@@ -33,20 +36,37 @@ const Card = ({ card }: Props) => {
                 </div>
             ) : null}
             {card.type === 'leters_icon_and_text' ? (
-                <>
+                <div className="flex gap-4">
                     <div
-                        className={`border-[1px] border-accent-color h-full w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] flex justify-end items-end tracking-tight ${card.hide_left_letter_on_mobile ? 'hidden sm:flex' : ''}`}
+                        className={`flex flex-1 justify-center items-center  border-[1px] border-accent-color w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] tracking-tight ${card.hide_left_letter_on_mobile ? 'hidden sm:flex' : ''}`}
                     >
-                        <p
-                            className={`text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-text-default p-0 m-0 uppercase`}
-                        >
-                            {card.icon_letter_1 ?? null}
-                        </p>
-                        <p
-                            className={`text-[40px] leading-[60px] sm:text-[60px] sm:leading-[80px] text-text-default p-0 m-0 -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
-                        >
-                            {card.icon_letter_2 ?? null}
-                        </p>
+                        {card.icon_letter_1 ? (
+                            <p
+                                className={`text-[60px] leading-[60px] sm:text-[80px] sm:leading-[80px] text-text-default p-0 m-0 uppercase`}
+                            >
+                                {card.icon_letter_1 ?? null}
+                            </p>
+                        ) : null}
+                        {card.icon_letter_2 ? (
+                            <p
+                                className={`text-[40px] leading-[60px] translate-y-[4px]  sm:text-[60px] sm:leading-[80px] text-text-default p-0 m-0 -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
+                            >
+                                {card.icon_letter_2 ?? null}
+                            </p>
+                        ) : null}
+                        {card.icon === 'M' ? (
+                            <div className="flex justify-center items-center h-full w-full">
+                                <MealooLogoIcon color="#8AA100" size={32} />
+                            </div>
+                        ) : card.icon === 'F' ? (
+                            <div className="flex justify-center items-center h-full w-full">
+                                <FaveitIcon size={40} />
+                            </div>
+                        ) : card.icon === 'C' ? (
+                            <div className="flex justify-center items-center h-full w-full">
+                                <CustodianLogoIcon color="#fafafa" size={32} />
+                            </div>
+                        ) : null}
                     </div>
 
                     <div className="flex flex-col gap-2">
@@ -101,7 +121,7 @@ const Card = ({ card }: Props) => {
                             </a>
                         ) : null}
                     </div>
-                </>
+                </div>
             ) : null}
             {card.type === 'leters_icon_and_text_and_list' ? (
                 <>

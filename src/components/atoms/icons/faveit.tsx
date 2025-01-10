@@ -1,8 +1,8 @@
-export default function FaveitIcon({ theme }: { theme?: 'light' | 'dark' }) {
+export default function FaveitIcon({ size }: { size?: number }) {
     return (
         <svg
-            width="177"
-            height="80"
+            width={size ? size * 1.77 : '177'}
+            height={size ? size * 0.8 : '80'}
             viewBox="0 0 177 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
