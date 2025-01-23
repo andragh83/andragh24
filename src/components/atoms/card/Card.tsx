@@ -30,7 +30,7 @@ const Card = ({ card }: Props) => {
             {card.type === 'icon_and_text' ? (
                 <div className="flex item-center gap-4 p-4 rounded-lg bg-card-bg w-full text-[22px]">
                     <CardIcon icon={card.text as ICardIcon} />
-                    <p className="uppercase font-sans text-base m-0 p-0 leading-0 self-center">
+                    <p className="uppercase font-sans text-base m-0 p-0 leading-0 h-[22px] self-center">
                         {card.text}
                     </p>
                 </div>
@@ -38,7 +38,7 @@ const Card = ({ card }: Props) => {
             {card.type === 'leters_icon_and_text' ? (
                 <div className="flex gap-4">
                     <div
-                        className={`flex flex-1 justify-center items-center  border-[1px] border-accent-color w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] tracking-tight ${card.hide_left_letter_on_mobile ? 'hidden sm:flex' : ''}`}
+                        className={`flex flex-1 ${card.icon ? 'justify-center items-center' : 'justify-end items-end'}  border-[1px] border-accent-color w-[100px] min-w-[100px] sm:w-[120px] sm:min-w-[120px] px-[12px] pt-[12px] tracking-tight ${card.hide_left_letter_on_mobile ? 'hidden sm:flex' : ''}`}
                     >
                         {card.icon_letter_1 ? (
                             <p
@@ -49,7 +49,7 @@ const Card = ({ card }: Props) => {
                         ) : null}
                         {card.icon_letter_2 ? (
                             <p
-                                className={`text-[40px] leading-[60px] translate-y-[4px]  sm:text-[60px] sm:leading-[80px] text-text-default p-0 m-0 -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
+                                className={`text-[40px] leading-[66px] translate-y-[4px]  sm:text-[60px] sm:leading-[88px] text-text-default p-0 m-0 -mb-[7px] ${card.icon_letter_1 === 'T' ? '-ml-3' : ''}`}
                             >
                                 {card.icon_letter_2 ?? null}
                             </p>
@@ -100,7 +100,7 @@ const Card = ({ card }: Props) => {
                             <ul className="flex flex-col gap-2">
                                 {card.text_list.map((text, i) => (
                                     <li
-                                        className="px-4 py-2 rounded-lg bg-card-bg text-[14px] md:text-[16px] text-serif-base"
+                                        className="px-4 py-2 rounded-lg bg-card-bg text-sm md:text-base text-serif-base"
                                         key={`text_list_item_${i}`}
                                     >
                                         {text}
@@ -111,7 +111,7 @@ const Card = ({ card }: Props) => {
 
                         {card.url_text && card.url ? (
                             <a
-                                className={`px-4 py-3 rounded-full bg-btn-bg text-bg-color-default w-auto text-[14px] leading-[14px] text-center mt-4 hover:bg-text-default md:w-fit uppercase mb-1`}
+                                className={`px-4 py-3 rounded-full bg-btn-bg text-bg-color-default w-auto text-xs sm:text-sm leading-[14px] text-center mt-4 hover:bg-text-default md:w-fit uppercase mb-1`}
                                 href={card.url}
                                 target={
                                     card.url_external ? '_blank' : undefined
@@ -180,7 +180,7 @@ const Card = ({ card }: Props) => {
                                     >
                                         <CardIcon icon={item} size={28} />
                                     </div>
-                                    <p className="uppercase text-text-default text-[18px] leading-[18px]">
+                                    <p className="uppercase text-text-default text-sm sm:text-base leading-[18px]">
                                         {item}
                                     </p>
                                 </div>

@@ -6,7 +6,6 @@ interface Props {
 
 const { title, imagePath } = Astro.props
 import '@fontsource-variable/urbanist'
-import '@fontsource/merriweather'
 ---
 
 <!doctype html>
@@ -111,6 +110,10 @@ import '@fontsource/merriweather'
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <slot />

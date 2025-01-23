@@ -55,17 +55,17 @@ h2 {
 .cardSubtitle {
     font-family: 'Urbanist', sans-serif;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 28px;
     color: var(--text-muted, #afafaf);
 }
 
 .cardText {
     /* margin-top: 0.5rem; */
     margin-bottom: 0;
-    font-family: 'Merriweather', serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 26px;
     color: var(--text-muted, #afafaf);
 }
