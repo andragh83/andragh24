@@ -6,10 +6,10 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Urbanist', ...defaultTheme.fontFamily.sans],
-                serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
+                serif: ['Arial', 'Helvetica', 'sans-serif'],
             },
             fontSize: {
-                'serif-base': ['14px', '22px'],
+                'serif-base': ['16px', '26px'],
             },
             colors: {
                 'off-black': 'var(--bg-color-muted, #343434)',

@@ -44,14 +44,14 @@ export const data: { [key: string]: ICard } = {
         style: 'full-color',
         icon_letter_1: 'J',
         icon_letter_2: 's',
-        text: 'I’m a self-taught software engineer specialised in JAVASCRIPT based frontend technologies.',
+        text: 'I’m a self-taught software engineer specialised in JAVASCRIPT based frontend technologies. Currently, I use in my daily work:',
     },
     skills_card_fundam: {
         type: 'leters_icon_and_text',
         style: 'full-color',
         icon_letter_1: 'T',
         icon_letter_2: 's',
-        text: 'I know my fundamentals so I can learn any javascript based framework. Currently, I use in my daily work:',
+        text: 'I know the fundamentals so I can learn any javascript based framework. ',
     },
     skills_card_list: {
         type: 'sub_card_list',
@@ -149,7 +149,6 @@ export const data: { [key: string]: ICard } = {
 
 export const skills_cards_list = [
     'skills_card_general',
-    'skills_card_fundam',
     'skills_card_list',
     'skills_card_backend',
     'skills_card_supabase',

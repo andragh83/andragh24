@@ -17,18 +17,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.4
         version: 5.1.4(astro@5.1.3(jiti@1.21.0)(rollup@4.30.1)(typescript@5.4.5)(yaml@2.7.0))(tailwindcss@3.4.3)
-      '@fontsource-variable/eb-garamond':
-        specifier: ^5.0.19
-        version: 5.0.19
       '@fontsource-variable/urbanist':
         specifier: ^5.0.21
         version: 5.0.21
-      '@fontsource/inter':
-        specifier: ^5.1.1
-        version: 5.1.1
-      '@fontsource/merriweather':
-        specifier: ^5.1.1
-        version: 5.1.1
       '@types/react':
         specifier: ^18.3.2
         version: 18.3.2
@@ -532,17 +523,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/eb-garamond@5.0.19':
-    resolution: {integrity: sha512-CWMCwZ4jPipeKxA+0h33Ex08YggBjHJ1ubWFuOdNqa3lbuLmn/e+NInXbSvQcqFjV4M6QxGKiUfVC7CtVFmKAg==}
-
   '@fontsource-variable/urbanist@5.0.21':
     resolution: {integrity: sha512-OovhNBmyqatjOOCBa4gsZ8usS+VAMtHdJAzhGMVvo+42Ryjh3DJjbnXrgfp7TF5N6SBPMwmw7ALY3ZdCSvWoDw==}
-
-  '@fontsource/inter@5.1.1':
-    resolution: {integrity: sha512-weN3E+rq0Xb3Z93VHJ+Rc7WOQX9ETJPTAJ+gDcaMHtjft67L58sfS65rAjC5tZUXQ2FdZ/V1/sSzCwZ6v05kJw==}
-
-  '@fontsource/merriweather@5.1.1':
-    resolution: {integrity: sha512-GaO8ZHDCQAuoPJh0yiLK+NzL03OnGs64uFGKFRSouinZ1CtoEtO+3DHr4LZokFW+Au5MvWr4Am2MOhjdyvIRyA==}
 
   '@img/sharp-darwin-arm64@0.33.3':
     resolution: {integrity: sha512-FaNiGX1MrOuJ3hxuNzWgsT/mg5OHG/Izh59WW2mk1UwYHUwtfbhk5QNKYZgxf0pLOhx9ctGiGa2OykD71vOnSw==}
@@ -2965,13 +2947,7 @@ snapshots:
   '@esbuild/win32-x64@0.24.2':
     optional: true
 
-  '@fontsource-variable/eb-garamond@5.0.19': {}
-
   '@fontsource-variable/urbanist@5.0.21': {}
-
-  '@fontsource/inter@5.1.1': {}
-
-  '@fontsource/merriweather@5.1.1': {}
 
   '@img/sharp-darwin-arm64@0.33.3':
     optionalDependencies:
