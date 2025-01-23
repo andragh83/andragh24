@@ -59,7 +59,7 @@ export default function HeroImage() {
 
     let bottomContentPlacement =
         scaleImgWithContent === 'story'
-            ? windowDimensions && windowDimensions?.height - 580
+            ? windowDimensions && windowDimensions?.height - 610
             : scaleImgWithContent === 'contact'
               ? windowDimensions && windowDimensions.height / 2 - 160
               : undefined
@@ -302,7 +302,7 @@ export default function HeroImage() {
                             {story.map((p, i) => (
                                 <p
                                     key={`story_${i}`}
-                                    className="text-text-default text-[14px] lg:text-[16px] font-serif 
+                                    className="text-text-default text-[16px] lg:text-[18px] font-serif 
                                                 font-light max-w-[1400px]"
                                 >
                                     {p}
